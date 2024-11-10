@@ -1,6 +1,6 @@
 extends Node
 
-var commands = ["help", "clear", "use"] #gravity destroy %hack
+var commands = ["help", "clear", "use","destroy"] #gravity destroy %hack
 var gravity = Vector2(0, 980)
 
 func _ready() -> void:

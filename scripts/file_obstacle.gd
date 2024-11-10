@@ -9,6 +9,7 @@ func _ready() -> void:
 	anim.frame = randi_range(0,2)
 	anim.global_rotation = 0
 	$CollisionShape2D.global_rotation = 0
+	$Area2D/CollisionShape2D.global_rotation = 0
 
 #constant_linear_velocity 
 

@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="1_q5won"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dr6yg"]
-size = Vector2(30, 30)
+size = Vector2(29, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pnwn6"]
-size = Vector2(30, 94)
+size = Vector2(28, 92)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3liqt"]
 size = Vector2(29.0246, 28.0883)
@@ -18,6 +18,8 @@ size = Vector2(28.1516, 90.7958)
 [node name="TBlock" type="CharacterBody2D"]
 position = Vector2(32, 48)
 disable_mode = 1
+collision_layer = 33
+collision_mask = 32
 floor_constant_speed = true
 script = ExtResource("1_e78xx")
 
@@ -25,9 +27,11 @@ script = ExtResource("1_e78xx")
 texture = ExtResource("1_q5won")
 
 [node name="Damage" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
-position = Vector2(-16, 0)
+position = Vector2(-15.5, 0)
 shape = SubResource("RectangleShape2D_dr6yg")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Damage"]

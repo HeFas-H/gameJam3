@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/block_ai.gd" id="1_eiddu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdost"]
-size = Vector2(26.5245, 120.797)
+size = Vector2(24.7562, 118.88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i68qi"]
 size = Vector2(30, 126)
@@ -12,6 +12,8 @@ size = Vector2(30, 126)
 [node name="LongBlock" type="CharacterBody2D"]
 position = Vector2(16, 64)
 disable_mode = 1
+collision_layer = 33
+collision_mask = 32
 floor_constant_speed = true
 script = ExtResource("1_eiddu")
 
@@ -20,9 +22,11 @@ rotation = -1.5708
 texture = ExtResource("1_2oww0")
 
 [node name="Damage" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
-position = Vector2(4.76837e-07, -1.90735e-06)
+position = Vector2(1.90735e-06, -3.8147e-06)
 scale = Vector2(1.13103, 1.04307)
 shape = SubResource("RectangleShape2D_sdost")
 

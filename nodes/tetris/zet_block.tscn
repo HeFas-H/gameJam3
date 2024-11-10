@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8t2bduxx23m3" path="res://assets/tetris/Z-block.png" id="1_vxyso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdost"]
-size = Vector2(27.1806, 58.2959)
+size = Vector2(25.3685, 56.4154)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfqfe"]
 size = Vector2(30, 62)
@@ -12,6 +12,8 @@ size = Vector2(30, 62)
 [node name="ZetBlock" type="CharacterBody2D"]
 position = Vector2(32, 48)
 disable_mode = 1
+collision_layer = 33
+collision_mask = 32
 floor_constant_speed = true
 script = ExtResource("1_nlgmi")
 
@@ -19,6 +21,8 @@ script = ExtResource("1_nlgmi")
 texture = ExtResource("1_vxyso")
 
 [node name="Damage" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
 position = Vector2(-16, 16)

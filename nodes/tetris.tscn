@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://sjaafxbsrgsa"]
+[gd_scene load_steps=17 format=3 uid="uid://sjaafxbsrgsa"]
 
 [ext_resource type="Script" path="res://scripts/tetris.gd" id="1_cmjnl"]
 [ext_resource type="Texture2D" uid="uid://dyey4220vadmr" path="res://assets/tetris/tetris.png" id="1_l0sxk"]
+[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_hhera"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="2_n22dm"]
 [ext_resource type="Texture2D" uid="uid://c3jvb2omxn1b0" path="res://assets/tetris/L-block.png" id="4_4k3ad"]
 [ext_resource type="Texture2D" uid="uid://c212xawx23k3u" path="res://assets/tetris/I-block.png" id="5_v3y7l"]
@@ -74,12 +75,19 @@ radius = 30.0
 [node name="Tetris" type="Node2D"]
 script = ExtResource("1_cmjnl")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(294, 326)
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+texture = ExtResource("2_hhera")
+
 [node name="Tetris2" type="Sprite2D" parent="."]
 position = Vector2(288, 336)
 texture = ExtResource("1_l0sxk")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_mask = 0
+collision_layer = 33
+collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(288, 592.75)
@@ -144,9 +152,6 @@ horizontal_alignment = 1
 
 [node name="player" parent="." instance=ExtResource("2_n22dm")]
 position = Vector2(175, 512)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(294, 326)
 
 [node name="Victory" type="Area2D" parent="."]
 position = Vector2(489, 550)

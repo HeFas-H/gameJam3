@@ -38,15 +38,7 @@ func check_bomb( num ):
 	#l_mines.text = str(mines-checked)
 
 func restart():
-	start_time = Time.get_ticks_msec()/1000
-	for i in mines_matrix:
-		for el in i:
-			el.type = 0
-			el.sprite.frame = 11
-	check_bomb(0)
-	checked = 0
-	l_mines.text = str(mines-checked)
-	place_bomb()
+	$RestartTimer.start()
 
 func place_bomb():
 	for i in mines:
@@ -95,5 +87,20 @@ func _check( id ):
 					opened = opened + 1
 					mines_matrix[id.x+x][id.y+y].sprite.frame = mines_matrix[id.x+x][id.y+y].type
 	if opened + mines == map_size.x*map_size.y:
-		Victory()
+		$VictoryDelay.start()
 					
+
+func _on_delay_timeout() -> void:
+	global.commands.append("destroy")
+	get_tree().change_scene_to_file("res://nodes/world.tscn")
+
+func _on_restart_timer_timeout() -> void:
+	start_time = Time.get_ticks_msec()/1000
+	for i in mines_matrix:
+		for el in i:
+			el.type = 0
+			el.sprite.frame = 11
+	check_bomb(0)
+	checked = 0
+	l_mines.text = str(mines-checked)
+	place_bomb()

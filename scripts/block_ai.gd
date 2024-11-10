@@ -11,7 +11,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity()/1.2 * delta
 		move_and_slide()
 
 func _on_triggered(_body: Node2D) -> void:
