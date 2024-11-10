@@ -12,12 +12,12 @@ func _ready() -> void:
 	timer.autostart = false
 	timer.one_shot = true
 	add_child(timer)
-	timer.start(1)
+	timer.start(0.8)
 	timer.connect("timeout", Callable(self, "_timer_timeout") )
 
-var gravity = Vector2(0,400)
+var gravity = Vector2(0,200)
 func _timer_timeout():
-	gravity = Vector2(0,5000)
+	gravity = Vector2(0,1000)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
