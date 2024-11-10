@@ -15,13 +15,13 @@ func _ready() -> void:
 	timer.start(1)
 	timer.connect("timeout", Callable(self, "_timer_timeout") )
 
-var gravity
+var gravity = Vector2(0,400)
 func _timer_timeout():
-	
+	gravity = Vector2(0,5000)
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += gravity * delta
 		move_and_slide()
 
 func _on_triggered(_body: Node2D) -> void:
