@@ -32,6 +32,7 @@ func Use() -> void:
 		var obst_file = obstacle.instantiate()
 		obst_file.pos = Vector2((i+1)*48, 0) - global_position
 		obst_file.set_meta("can_disappear", get_meta("can_disappear"))
+		obst_file.set_meta("can_reload", false)
 		obstacles.add_child(obst_file)
 	if !get_meta("can_reload"):
 		get_meta("coms").erase("use")
