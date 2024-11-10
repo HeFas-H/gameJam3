@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://sjaafxbsrgsa"]
+[gd_scene load_steps=18 format=3 uid="uid://sjaafxbsrgsa"]
 
 [ext_resource type="Script" path="res://scripts/tetris.gd" id="1_j08jq"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_wtr31"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://s3qldfpw6hin" path="res://assets/tetris/O-block.png" id="7_13cry"]
 [ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="8_kt805"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="9_aqdng"]
+[ext_resource type="AudioStream" uid="uid://3db1w5hj10df" path="res://assets/sound/tetris_ost.mp3" id="10_whtyi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlhwu"]
 size = Vector2(616, 23.5)
@@ -72,7 +73,7 @@ shadow_offset = Vector2(3.65, 1)
 [sub_resource type="CircleShape2D" id="CircleShape2D_27suf"]
 radius = 30.0
 
-[node name="Tetris" type="Node2D"]
+[node name="World" type="Node2D"]
 script = ExtResource("1_j08jq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -168,6 +169,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Victory"]
 shape = SubResource("CircleShape2D_27suf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_whtyi")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Victory" to="." method="_on_victory_entered"]

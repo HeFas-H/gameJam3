@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://duktmkh43q26s"]
+[gd_scene load_steps=12 format=3 uid="uid://duktmkh43q26s"]
 
 [ext_resource type="Script" path="res://scripts/minesweeper.gd" id="1_2cqnl"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_xjbmr"]
 [ext_resource type="Texture2D" uid="uid://c14je27i8tu8l" path="res://assets/minesweeper.png" id="3_ashn8"]
+[ext_resource type="Texture2D" uid="uid://boqmkywm7e4nt" path="res://assets/errors/Expl_1.png" id="4_vsk80"]
+[ext_resource type="Texture2D" uid="uid://dwjmp4kmvvap3" path="res://assets/errors/expl_2.png" id="5_grbhe"]
+[ext_resource type="Texture2D" uid="uid://cps704pbefh8k" path="res://assets/errors/expl_3.png" id="6_54s0n"]
+[ext_resource type="Texture2D" uid="uid://18uj1n1fdm8i" path="res://assets/errors/expl_4.png" id="7_bwokm"]
+[ext_resource type="AudioStream" uid="uid://d3g4dah0xt88g" path="res://assets/sound/minesweeper_error.wav" id="8_ond7v"]
 
 [sub_resource type="FontVariation" id="FontVariation_ub2ew"]
 
@@ -11,7 +16,36 @@ font = SubResource("FontVariation_ub2ew")
 font_size = 55
 font_color = Color(0, 0, 0, 1)
 
-[node name="Minesweeper" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1st8f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vsk80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_grbhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54s0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vsk80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_grbhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_54s0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bwokm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="World" type="Node2D"]
 script = ExtResource("1_2cqnl")
 map_size = Vector2(12, 12)
 mines = 12
@@ -21,6 +55,7 @@ position = Vector2(78, 74)
 zoom = Vector2(2.145, 2.145)
 
 [node name="Background" type="Sprite2D" parent="Camera2D"]
+position = Vector2(15, -204)
 texture = ExtResource("2_xjbmr")
 
 [node name="Panel" type="Panel" parent="Camera2D/Background"]
@@ -55,10 +90,23 @@ label_settings = SubResource("LabelSettings_h0pmy")
 horizontal_alignment = 1
 
 [node name="VictoryDelay" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
 
 [node name="RestartTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="EXPL_TIMER" type="Timer" parent="."]
+
+[node name="EXPL_SPRITE" type="AnimatedSprite2D" parent="."]
+visible = false
+top_level = true
+position = Vector2(74, 33)
+sprite_frames = SubResource("SpriteFrames_1st8f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ond7v")
+
 [connection signal="timeout" from="VictoryDelay" to="." method="_on_delay_timeout"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
+[connection signal="timeout" from="EXPL_TIMER" to="." method="_on_expl_timer_timeout"]

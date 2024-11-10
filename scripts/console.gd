@@ -78,7 +78,19 @@ func console_error():
 
 func console_help():
 	for i in global.commands:
+		match i:
+			"destroy":
+				_text_edit("уничтожает ближайший \nзамок к вам")
+			"use":
+				_text_edit("открывает/использует \nближайший интерактивный \nобъект")
+			"clear":
+				_text_edit("очищает логи консоли")
+			"help":
+				_text_edit("пишет все команды")
+			"gravity":
+				_text_edit("gravity 0.5 | gravity 2 \n- изменяет гравитацию")
 		_text_edit(i)
+		
 	
 func console_clear():
 	text.text = ""
@@ -95,9 +107,9 @@ func _entered(new_text: String) -> void:
 	line.text = ""
 	_parse()
 
-func _on_exit_pressed() -> void:
-	visible = false
-	position = Vector2(-570,-420)
+#func _on_exit_pressed() -> void:
+	#visible = false
+	#position = Vector2(-570,-420)
 
 func _on_mouse_entered() -> void:
 	line.focus_mode = 2

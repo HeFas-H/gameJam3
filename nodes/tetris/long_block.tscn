@@ -7,7 +7,7 @@
 size = Vector2(24.7562, 118.88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i68qi"]
-size = Vector2(30, 126)
+size = Vector2(32, 126)
 
 [node name="LongBlock" type="CharacterBody2D"]
 position = Vector2(16, 64)

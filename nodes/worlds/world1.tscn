@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ulpv8dnjf13o"]
+[gd_scene load_steps=11 format=3 uid="uid://ulpv8dnjf13o"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_7pwl7"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="6_oqutb"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="7_2oaju"]
 [ext_resource type="PackedScene" uid="uid://c18qx7a6frjh1" path="res://nodes/minesweeper_icon.tscn" id="8_ff3dx"]
+[ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="9_ma76m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
@@ -116,10 +117,6 @@ offset_bottom = 436.0
 
 [node name="Other" type="Node2D" parent="."]
 
-[node name="FileObstacle" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-227, 80)
-metadata/can_reload = false
-
 [node name="FileObstacle2" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-136, 317)
 metadata/can_reload = false
@@ -130,14 +127,6 @@ metadata/can_reload = false
 
 [node name="FileObstacle5" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(56, 27)
-metadata/can_reload = false
-
-[node name="FileObstacle6" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-308, 80)
-metadata/can_reload = false
-
-[node name="FileObstacle7" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-381, 84)
 metadata/can_reload = false
 
 [node name="FileObstacle8" parent="Other" instance=ExtResource("6_oqutb")]
@@ -155,3 +144,6 @@ metadata/can_reload = false
 [node name="FileObstacle3" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-320, 333)
 metadata/can_reload = false
+
+[node name="FolderIcon" parent="Other" instance=ExtResource("9_ma76m")]
+position = Vector2(-311, 78)

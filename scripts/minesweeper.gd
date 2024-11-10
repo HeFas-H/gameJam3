@@ -65,10 +65,6 @@ func place_bomb():
 			el.type = count
 	is_playable = true
 
-func Victory():
-	global.commands.append("destroy")
-	get_tree().change_scene_to_file("res://nodes/worlds/world.tscn")
-
 func _check( id ):
 	var pos = Vector2(0,0)
 	for x in range(-1,2):
@@ -88,11 +84,20 @@ func _check( id ):
 					mines_matrix[id.x+x][id.y+y].sprite.frame = mines_matrix[id.x+x][id.y+y].type
 	if opened + mines == map_size.x*map_size.y:
 		$VictoryDelay.start()
-					
+		EXPLOSION()
+
+@onready var EXPLOSION_SPRITE = $EXPL_SPRITE
+func EXPLOSION():
+	$AudioStreamPlayer2D.play()
+	EXPLOSION_SPRITE.global_position = get_global_mouse_position()
+	EXPLOSION_SPRITE.scale = Vector2(0.1,0.1)
+	EXPLOSION_SPRITE.show()
+	$EXPL_TIMER.start()
+	EXPLOSION_SPRITE.play("default")
 
 func _on_delay_timeout() -> void:
 	global.commands.append("destroy")
-	get_tree().change_scene_to_file("res://nodes/world.tscn")
+	get_tree().change_scene_to_file("res://nodes/worlds/world.tscn")
 
 func _on_restart_timer_timeout() -> void:
 	start_time = Time.get_ticks_msec()/1000
@@ -104,3 +109,10 @@ func _on_restart_timer_timeout() -> void:
 	checked = 0
 	l_mines.text = str(mines-checked)
 	place_bomb()
+
+
+func _on_expl_timer_timeout() -> void:
+	if !EXPLOSION_SPRITE.scale.x > 1.2:
+		EXPLOSION_SPRITE.scale += Vector2(0.4,0.4)
+	else:
+		$EXPL_TIMER.stop()

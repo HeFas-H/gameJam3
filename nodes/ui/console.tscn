@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgob3k0tk53pk"]
+[gd_scene load_steps=5 format=3 uid="uid://bgob3k0tk53pk"]
 
 [ext_resource type="Script" path="res://scripts/console.gd" id="1_c5ag6"]
 [ext_resource type="Texture2D" uid="uid://vt8uaeq1tx6p" path="res://assets/console_icon.png" id="2_6v83x"]
+[ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="3_qlo1b"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_37clm"]
 font_size = 20
@@ -10,9 +11,9 @@ font_size = 20
 top_level = true
 layout_mode = 3
 anchor_right = 0.247
-anchor_bottom = 0.44
+anchor_bottom = 0.333
 offset_right = 0.455994
-offset_bottom = -0.120026
+offset_bottom = 0.287994
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -25,7 +26,7 @@ offset_left = -2.0
 offset_top = -3.0
 offset_right = 289.0
 offset_bottom = 288.0
-color = Color(0.187176, 0.187176, 0.187176, 0.662745)
+color = Color(0.203922, 0.356863, 0.509804, 0.745098)
 
 [node name="Panel" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -52,19 +53,9 @@ size_flags_horizontal = 3
 text = " Console"
 label_settings = SubResource("LabelSettings_37clm")
 
-[node name="Hide" type="Button" parent="Panel/App/HBoxContainer"]
+[node name="TextureRect2" type="TextureRect" parent="Panel/App/HBoxContainer"]
 layout_mode = 2
-disabled = true
-text = " __ "
-
-[node name="Wide" type="Button" parent="Panel/App/HBoxContainer"]
-layout_mode = 2
-disabled = true
-text = " ▭ "
-
-[node name="Exit" type="Button" parent="Panel/App/HBoxContainer"]
-layout_mode = 2
-text = "  x  "
+texture = ExtResource("3_qlo1b")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/App"]
 layout_mode = 2
@@ -83,7 +74,6 @@ draw_spaces = true
 layout_mode = 2
 size_flags_vertical = 8
 
-[connection signal="pressed" from="Panel/App/HBoxContainer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="mouse_entered" from="Panel/App/VBoxContainer/LineEdit" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Panel/App/VBoxContainer/LineEdit" to="." method="_on_mouse_exited"]
 [connection signal="text_submitted" from="Panel/App/VBoxContainer/LineEdit" to="." method="_entered"]

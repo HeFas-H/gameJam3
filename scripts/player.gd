@@ -18,6 +18,13 @@ enum status {
 	fly = 3,
 }
 
+@onready var anim_error = $AnimatedSprite2D2
+
+func  _ready() -> void:
+	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
+	anim_error.show()
+	anim_error.play("default")
+
 func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
@@ -80,3 +87,6 @@ func _on_console_trigger_exited(body: Node2D) -> void:
 
 func _on_dash_reload() -> void:
 	can_jump = false
+
+func _on_error_animation_finished() -> void:
+	anim_error.hide()

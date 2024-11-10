@@ -1,0 +1,396 @@
+[gd_scene load_steps=7 format=3 uid="uid://cc8fbh2cdm5vv"]
+
+[ext_resource type="Texture2D" uid="uid://t6f8lmahjty8" path="res://assets/icon_folder.png" id="1_4rldf"]
+[ext_resource type="Script" path="res://scripts/folder.gd" id="1_8oq8h"]
+[ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="2_b63t5"]
+[ext_resource type="Texture2D" uid="uid://dudhq8lhb1uw0" path="res://assets/icon_png.png" id="3_3qdxg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_37clm"]
+font_size = 20
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wyrt"]
+size = Vector2(443, 291)
+
+[node name="Folder" type="Control"]
+top_level = true
+layout_mode = 3
+anchor_right = 0.247
+anchor_bottom = 0.333
+offset_right = 0.455994
+offset_bottom = 0.287994
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_8oq8h")
+metadata/size = 20
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -221.0
+offset_top = -1.0
+offset_right = 221.0
+offset_bottom = 290.0
+color = Color(0.852373, 0.839122, 0.631556, 0.745098)
+
+[node name="Panel" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0.560784)
+layout_mode = 2
+offset_left = -219.0
+offset_top = 2.0
+offset_right = 219.0
+offset_bottom = 290.0
+
+[node name="App" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Panel" type="PanelContainer" parent="Panel/App"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/Panel"]
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Folder
+"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/App/Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_b63t5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/App"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+focus_mode = 2
+alignment = 2
+
+[node name="Left" type="VBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Panel" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Games
+"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel2" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel2"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Labs"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel3" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel3"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Other"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel4" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel4"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Videos"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel5" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel5"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel5/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pics"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel6" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel6"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel6/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "music"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel7" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel7"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel7/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel7/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "PC"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Panel8" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel8"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel8/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Left/Panel8/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Godot"
+label_settings = SubResource("LabelSettings_37clm")
+
+[node name="Right" type="VBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Panel" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "last_ver
+"
+label_settings = SubResource("LabelSettings_37clm")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Panel2" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel2"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel2/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "last_last_ver
+"
+label_settings = SubResource("LabelSettings_37clm")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Panel3" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel3"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel3/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "last_last_ver_2
+"
+label_settings = SubResource("LabelSettings_37clm")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Panel4" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel4"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel4/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_4rldf")
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "super_last_ver2.0.2 tochno last2"
+label_settings = SubResource("LabelSettings_37clm")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="Panel5" type="PanelContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right"]
+self_modulate = Color(0.0110876, 0.0110876, 0.0110876, 1)
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel5"]
+self_modulate = Color(0.051971, 0.051971, 0.051971, 1)
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel5/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_3qdxg")
+
+[node name="Label" type="Label" parent="Panel/App/VBoxContainer/HBoxContainer/Right/Panel5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FunnyCuteCat"
+label_settings = SubResource("LabelSettings_37clm")
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-219, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(219.5, 142.5)
+shape = SubResource("RectangleShape2D_4wyrt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
