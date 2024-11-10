@@ -1,17 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv1wmx4fko4yb"]
+[gd_scene load_steps=6 format=3 uid="uid://cv1wmx4fko4yb"]
 
 [ext_resource type="Script" path="res://scripts/folder_icon.gd" id="1_08mp5"]
 [ext_resource type="Texture2D" uid="uid://t6f8lmahjty8" path="res://assets/icon_folder.png" id="2_kfllm"]
 [ext_resource type="Texture2D" uid="uid://cdeix608x3gmc" path="res://assets/icon_lock.png" id="3_7kkd8"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kwluh"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4xsx"]
 size = Vector2(32, 32)
 
 [node name="FolderIcon" type="StaticBody2D"]
+visibility_layer = 3
 collision_layer = 17
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_kwluh")
 script = ExtResource("1_08mp5")
-metadata/coms = ["destroy"]
-metadata/size = 20
+metadata/coms = ["destroy", "use"]
+metadata/size = 1
+metadata/is_locked = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_n4xsx")

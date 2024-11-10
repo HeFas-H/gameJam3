@@ -7,4 +7,5 @@ func _ready() -> void:
 		queue_free()
 
 func Destroy() -> void:
+	global.cur_level = 3
 	get_tree().change_scene_to_file("res://nodes/worlds/tetris.tscn")

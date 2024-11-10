@@ -14,6 +14,7 @@ metadata/Length = 0
 metadata/can_disappear = false
 metadata/can_reload = false
 metadata/coms = ["use", "destroy"]
+metadata/is_locked = true
 
 [node name="Rar" type="Sprite2D" parent="."]
 texture = ExtResource("2_k4ljf")

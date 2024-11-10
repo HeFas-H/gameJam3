@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_7pwl7"]
+[ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_chj6x"]
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_dchfm"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_ex34j"]
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_b57it"]
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="6_oqutb"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="7_2oaju"]
-[ext_resource type="PackedScene" uid="uid://c18qx7a6frjh1" path="res://nodes/minesweeper_icon.tscn" id="8_ff3dx"]
 [ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="9_ma76m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
@@ -19,6 +19,44 @@ size = Vector2(1152.38, 16)
 
 [node name="Background" type="Sprite2D" parent="Camera2D"]
 texture = ExtResource("1_6txqd")
+
+[node name="Trash" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-524, -378)
+texture = ExtResource("2_chj6x")
+
+[node name="Other" type="Node2D" parent="."]
+
+[node name="FolderIcon" parent="Other" instance=ExtResource("9_ma76m")]
+position = Vector2(-311, 78)
+metadata/size = 2
+
+[node name="FileObstacle2" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-136, 317)
+metadata/can_reload = false
+
+[node name="FileObstacle4" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-243, 261)
+metadata/can_reload = false
+
+[node name="FileObstacle5" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(56, 27)
+metadata/can_reload = false
+
+[node name="FileObstacle8" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(294, 141)
+metadata/can_reload = false
+
+[node name="FileObstacle9" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-431, -161)
+metadata/can_reload = false
+
+[node name="FileObstacle10" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(499, -282)
+metadata/can_reload = false
+
+[node name="FileObstacle3" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-320, 333)
+metadata/can_reload = false
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -101,12 +139,6 @@ metadata/point_2 = Vector2(160, 0)
 position = Vector2(-70, -535)
 metadata/Velocity = Vector2(0, 750)
 
-[node name="player" parent="." instance=ExtResource("7_2oaju")]
-position = Vector2(-460, 247)
-
-[node name="MinesweeperIcon" parent="." instance=ExtResource("8_ff3dx")]
-position = Vector2(302, -110)
-
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.846982, 0.919255, 0.976129, 1)
 self_modulate = Color(0, 0.843137, 1, 1)
@@ -115,35 +147,5 @@ offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
 
-[node name="Other" type="Node2D" parent="."]
-
-[node name="FileObstacle2" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-136, 317)
-metadata/can_reload = false
-
-[node name="FileObstacle4" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-243, 261)
-metadata/can_reload = false
-
-[node name="FileObstacle5" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(56, 27)
-metadata/can_reload = false
-
-[node name="FileObstacle8" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(294, 141)
-metadata/can_reload = false
-
-[node name="FileObstacle9" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-431, -161)
-metadata/can_reload = false
-
-[node name="FileObstacle10" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(499, -282)
-metadata/can_reload = false
-
-[node name="FileObstacle3" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-320, 333)
-metadata/can_reload = false
-
-[node name="FolderIcon" parent="Other" instance=ExtResource("9_ma76m")]
-position = Vector2(-311, 78)
+[node name="player" parent="." instance=ExtResource("7_2oaju")]
+position = Vector2(-525, 336)

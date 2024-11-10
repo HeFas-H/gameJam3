@@ -7,4 +7,5 @@ func _ready() -> void:
 		queue_free()
 
 func Use() -> void:
+	global.cur_level = 1
 	get_tree().change_scene_to_file("res://nodes/worlds/minesweeper.tscn")

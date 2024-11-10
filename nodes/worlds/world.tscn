@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=12 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_d6bjw"]
+[ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_rvngs"]
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_hjclm"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_5l5e1"]
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_d3rgn"]
@@ -27,6 +28,46 @@ offset_left = -577.0
 offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
+
+[node name="Trash" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-524, -378)
+texture = ExtResource("2_rvngs")
+
+[node name="Other" type="Node2D" parent="."]
+
+[node name="FolderIcon" parent="Other" instance=ExtResource("9_xtrhq")]
+position = Vector2(-51, 138)
+metadata/size = 3
+
+[node name="FileObstacle" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-520, 138)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle2" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-520, 53)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle3" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-519, -36)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle4" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-519, -121)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle5" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-451, -119)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle6" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(-451, -204)
+metadata/can_disappear = true
+metadata/can_reload = true
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -55,42 +96,36 @@ shape = SubResource("RectangleShape2D_2v6by")
 position = Vector2(0, 344)
 
 [node name="Bridge" parent="Objects" instance=ExtResource("2_d6bjw")]
-position = Vector2(385, 2)
+position = Vector2(-304, -462)
 metadata/Length = 6
 
 [node name="Bridge2" parent="Objects" instance=ExtResource("2_d6bjw")]
-position = Vector2(-199, 6)
+position = Vector2(-517, 3)
 rotation = -2.3562
 metadata/Length = 4
 metadata/can_disappear = true
 metadata/can_reload = true
 
 [node name="JumpNotepad" parent="Objects" instance=ExtResource("3_hjclm")]
-position = Vector2(193, 17)
+position = Vector2(-436, 7)
 metadata/Velocity = Vector2(0, 800)
 
 [node name="Platform" parent="Objects" instance=ExtResource("4_5l5e1")]
-position = Vector2(192, -114)
+position = Vector2(-282, -213)
 collision_mask = 0
 floor_stop_on_slope = false
 floor_block_on_wall = false
 
 [node name="TetrisIcon" parent="Objects" instance=ExtResource("5_d3rgn")]
-position = Vector2(289, 9)
+position = Vector2(522, -693)
 
 [node name="MinesweeperIcon" parent="Objects" instance=ExtResource("7_ggrp4")]
-position = Vector2(388, -47)
+position = Vector2(187, -271)
+
+[node name="Bridge3" parent="Objects" instance=ExtResource("2_d6bjw")]
+position = Vector2(50, -4)
+metadata/Length = 2
+metadata/is_locked = false
 
 [node name="player" parent="." instance=ExtResource("6_fdnoq")]
 position = Vector2(-47, 335)
-
-[node name="Other" type="Node2D" parent="."]
-
-[node name="FileObstacle" parent="Other" instance=ExtResource("8_5udh3")]
-position = Vector2(71, 225)
-metadata/can_disappear = true
-metadata/can_reload = true
-
-[node name="FolderIcon" parent="Other" instance=ExtResource("9_xtrhq")]
-position = Vector2(-425, 294)
-metadata/size = 25

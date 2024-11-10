@@ -26,7 +26,6 @@ func  _ready() -> void:
 	anim_error.play("default")
 
 func _physics_process(delta: float) -> void:
-	
 	if not is_on_floor():
 		if $DashReload.is_stopped() and can_jump:
 			$DashReload.start()

@@ -97,7 +97,8 @@ func EXPLOSION():
 
 func _on_delay_timeout() -> void:
 	global.commands.append("destroy")
-	get_tree().change_scene_to_file("res://nodes/worlds/world.tscn")
+	global.cur_level = 2
+	get_tree().change_scene_to_file("res://nodes/worlds/world1.tscn")
 
 func _on_restart_timer_timeout() -> void:
 	start_time = Time.get_ticks_msec()/1000

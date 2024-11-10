@@ -3,16 +3,19 @@ extends StaticBody2D
 @onready var obstacles = $Obstacles
 @onready var obstacle = preload("res://nodes/file_obstacle.tscn")
 # Called when the node enters the scene tree for the first time.
+var is_locked
+
 func _ready() -> void:
+	is_locked = get_meta("is_locked")
 	$Rar.global_rotation = 0
 	$CollisionShape2D.global_rotation = 0
 	$Obstacles/IconLock.global_rotation = 0
 	$Obstacles/IconLock.global_position = global_position + Vector2(15,15)
-	
-var is_destroyed = false
-	
+	if !is_locked:
+		$Obstacles/IconLock.queue_free()
+
 func Destroy() -> void:
-	is_destroyed = true
+	is_locked = false
 	for el in obstacles.get_children():
 		el.queue_free()
 	for i in get_meta("Length"):
@@ -24,7 +27,7 @@ func Destroy() -> void:
 		get_meta("coms").erase("destroy")
 
 func Use() -> void:
-	if !is_destroyed: 
+	if is_locked: 
 		return
 	for el in obstacles.get_children():
 		el.queue_free()
