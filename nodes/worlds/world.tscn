@@ -1,0 +1,91 @@
+[gd_scene load_steps=10 format=3 uid="uid://dq6pxu8j0823y"]
+
+[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
+[ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_d6bjw"]
+[ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_hjclm"]
+[ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_5l5e1"]
+[ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_d3rgn"]
+[ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="6_fdnoq"]
+[ext_resource type="PackedScene" uid="uid://c18qx7a6frjh1" path="res://nodes/minesweeper_icon.tscn" id="7_ggrp4"]
+[ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="8_5udh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v6by"]
+size = Vector2(1152.38, 16)
+
+[node name="World" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Camera2D"]
+texture = ExtResource("1_jpeim")
+
+[node name="Panel" type="Panel" parent="Camera2D/Background"]
+modulate = Color(0.846982, 0.919255, 0.976129, 1)
+self_modulate = Color(0, 0.843137, 1, 1)
+offset_left = -577.0
+offset_top = 379.0
+offset_right = 580.0
+offset_bottom = 436.0
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Walls"]
+position = Vector2(0, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(0.1875, 331)
+shape = SubResource("RectangleShape2D_2v6by")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(0, -483)
+shape = SubResource("RectangleShape2D_2v6by")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(-568, -59)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_2v6by")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/StaticBody2D"]
+position = Vector2(568, -59)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_2v6by")
+
+[node name="Objects" type="Node2D" parent="."]
+position = Vector2(0, 344)
+
+[node name="Bridge" parent="Objects" instance=ExtResource("2_d6bjw")]
+position = Vector2(385, 2)
+metadata/Length = 6
+
+[node name="Bridge2" parent="Objects" instance=ExtResource("2_d6bjw")]
+position = Vector2(-199, 6)
+rotation = -2.3562
+metadata/Length = 4
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="JumpNotepad" parent="Objects" instance=ExtResource("3_hjclm")]
+position = Vector2(193, 17)
+metadata/Velocity = Vector2(0, 800)
+
+[node name="Platform" parent="Objects" instance=ExtResource("4_5l5e1")]
+position = Vector2(192, -114)
+collision_mask = 0
+floor_stop_on_slope = false
+floor_block_on_wall = false
+
+[node name="TetrisIcon" parent="Objects" instance=ExtResource("5_d3rgn")]
+position = Vector2(289, 9)
+
+[node name="MinesweeperIcon" parent="Objects" instance=ExtResource("7_ggrp4")]
+position = Vector2(388, -47)
+
+[node name="player" parent="." instance=ExtResource("6_fdnoq")]
+position = Vector2(-47, 335)
+
+[node name="Other" type="Node2D" parent="."]
+
+[node name="FileObstacle" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(71, 225)
+metadata/can_disappear = true
+metadata/can_reload = true

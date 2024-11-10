@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=10 format=3 uid="uid://ulpv8dnjf13o"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_7pwl7"]
@@ -46,36 +46,65 @@ shape = SubResource("RectangleShape2D_t6atf")
 position = Vector2(0, 344)
 
 [node name="Bridge" parent="Objects" instance=ExtResource("2_7pwl7")]
-position = Vector2(385, 2)
+position = Vector2(95, -123)
 metadata/Length = 6
-metadata/coms = ["destroy"]
-
-[node name="Bridge2" parent="Objects" instance=ExtResource("2_7pwl7")]
-position = Vector2(-199, 6)
-rotation = -2.3562
-metadata/Length = 4
 metadata/can_disappear = true
 metadata/can_reload = true
-metadata/coms = ["destroy"]
+
+[node name="Bridge2" parent="Objects" instance=ExtResource("2_7pwl7")]
+position = Vector2(443, -167)
+rotation = -2.4836
+metadata/Length = 6
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="Bridge3" parent="Objects" instance=ExtResource("2_7pwl7")]
+position = Vector2(380, -523)
+rotation = -0.888373
+metadata/Length = 3
+metadata/can_disappear = true
+metadata/can_reload = true
 
 [node name="JumpNotepad" parent="Objects" instance=ExtResource("3_dchfm")]
-position = Vector2(193, 17)
-metadata/Velocity = Vector2(0, 800)
+position = Vector2(1, 6)
+metadata/Velocity = Vector2(0, 600)
 
 [node name="Platform" parent="Objects" instance=ExtResource("4_ex34j")]
-position = Vector2(192, -114)
+position = Vector2(-88, -296)
 collision_mask = 0
 floor_stop_on_slope = false
 floor_block_on_wall = false
 
 [node name="TetrisIcon" parent="Objects" instance=ExtResource("5_b57it")]
-position = Vector2(289, 9)
+position = Vector2(528, -685)
+
+[node name="JumpNotepad2" parent="Objects" instance=ExtResource("3_dchfm")]
+position = Vector2(-498, -301)
+metadata/Velocity = Vector2(0, 750)
+
+[node name="Platform2" parent="Objects" instance=ExtResource("4_ex34j")]
+position = Vector2(-295, -541)
+collision_mask = 0
+floor_stop_on_slope = false
+floor_block_on_wall = false
+
+[node name="Platform3" parent="Objects" instance=ExtResource("4_ex34j")]
+position = Vector2(57, -632)
+collision_mask = 0
+floor_stop_on_slope = false
+floor_block_on_wall = false
+metadata/point_1 = Vector2(-50, 0)
+metadata/point_2 = Vector2(160, 0)
+
+[node name="JumpNotepad3" parent="Objects" instance=ExtResource("3_dchfm")]
+position = Vector2(-70, -535)
+metadata/Velocity = Vector2(0, 750)
 
 [node name="player" parent="." instance=ExtResource("7_2oaju")]
-position = Vector2(-47, 335)
+position = Vector2(-460, 247)
 
 [node name="MinesweeperIcon" parent="." instance=ExtResource("8_ff3dx")]
-position = Vector2(388, 297)
+position = Vector2(302, -110)
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.846982, 0.919255, 0.976129, 1)
@@ -88,15 +117,41 @@ offset_bottom = 436.0
 [node name="Other" type="Node2D" parent="."]
 
 [node name="FileObstacle" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(71, 225)
-metadata/can_disappear = true
-metadata/can_reload = true
+position = Vector2(-227, 80)
+metadata/can_reload = false
 
 [node name="FileObstacle2" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-156, 195)
-metadata/can_disappear = true
-metadata/can_reload = true
+position = Vector2(-136, 317)
+metadata/can_reload = false
 
 [node name="FileObstacle3" parent="Other" instance=ExtResource("6_oqutb")]
-position = Vector2(-351, 267)
+position = Vector2(-341, 338)
+metadata/can_reload = false
+
+[node name="FileObstacle4" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-243, 261)
+metadata/can_reload = false
+
+[node name="FileObstacle5" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(56, 27)
+metadata/can_reload = false
+
+[node name="FileObstacle6" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-308, 80)
+metadata/can_reload = false
+
+[node name="FileObstacle7" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-381, 84)
+metadata/can_reload = false
+
+[node name="FileObstacle8" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(294, 141)
+metadata/can_reload = false
+
+[node name="FileObstacle9" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(-431, -161)
+metadata/can_reload = false
+
+[node name="FileObstacle10" parent="Other" instance=ExtResource("6_oqutb")]
+position = Vector2(499, -282)
 metadata/can_reload = false

@@ -33,7 +33,7 @@ var queue = {
 	18: {rotation = PI/2, type = 3, pos_x = 16*8, dir = Vector2(3,0), scale = Vector2(1,1)},
 	19: {rotation = 0, type = 4, pos_x = 16*12, dir = Vector2(0,3), scale = Vector2(1,1)},
 	20: {rotation = 0, type = 0, pos_x = 16*17, dir = Vector2(0,3), scale = Vector2(1,1)},
-	21: {rotation = PI/2, type = 2, pos_x = 16*3, dir = Vector2(-3,0), scale = Vector2(1,1)},
+	21: {rotation = PI/2, type = 2, pos_x = 16*3, dir = Vector2(3,0), scale = Vector2(1,1)},
 	22: {rotation = PI/2, type = 4, pos_x = 16*7, dir = Vector2(3,0), scale = Vector2(1,1)},
 	23: {rotation = -PI/2, type = 0, pos_x = 16*2, dir = Vector2(3,0), scale = Vector2(-1,1)},
 	24: {rotation = PI/2, type = 1, pos_x = 16*8, dir = Vector2(3,0), scale = Vector2(1,1)},
@@ -59,7 +59,7 @@ func _on_timer_timeout() -> void:
 
 func _on_victory_entered(body: Node2D) -> void:
 	global.commands.append("gravity")
-	get_tree().change_scene_to_file("res://nodes/world.tscn")
+	get_tree().change_scene_to_file("res://nodes/worlds/world.tscn")
 
 func _on_delay_timeout() -> void:
 	pass

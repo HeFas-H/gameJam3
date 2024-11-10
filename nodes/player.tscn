@@ -141,6 +141,7 @@ offset_right = -544.544
 offset_bottom = -422.12
 
 [node name="DashReload" type="Timer" parent="."]
+wait_time = 0.15
 one_shot = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

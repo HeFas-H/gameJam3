@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpueeq1d41pxi"
-path="res://.godot/imported/desk.png-10811accf6b344ab527d425fd5a913e9.ctex"
+uid="uid://crk6omujek3jx"
+path="res://.godot/imported/aizek_tilemap.png-d2a61254e70e5d5bbe256caf6cc56d79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/timed/desk.png"
-dest_files=["res://.godot/imported/desk.png-10811accf6b344ab527d425fd5a913e9.ctex"]
+source_file="res://assets/aizek_tilemap.png"
+dest_files=["res://.godot/imported/aizek_tilemap.png-d2a61254e70e5d5bbe256caf6cc56d79.ctex"]
 
 [params]
 

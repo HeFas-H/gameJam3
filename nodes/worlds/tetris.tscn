@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://sjaafxbsrgsa"]
 
-[ext_resource type="Script" path="res://scripts/tetris.gd" id="1_cmjnl"]
-[ext_resource type="Texture2D" uid="uid://dyey4220vadmr" path="res://assets/tetris/tetris.png" id="1_l0sxk"]
-[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_hhera"]
-[ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="2_n22dm"]
-[ext_resource type="Texture2D" uid="uid://c3jvb2omxn1b0" path="res://assets/tetris/L-block.png" id="4_4k3ad"]
-[ext_resource type="Texture2D" uid="uid://c212xawx23k3u" path="res://assets/tetris/I-block.png" id="5_v3y7l"]
-[ext_resource type="Texture2D" uid="uid://b8t2bduxx23m3" path="res://assets/tetris/Z-block.png" id="6_ipim8"]
-[ext_resource type="Texture2D" uid="uid://s3qldfpw6hin" path="res://assets/tetris/O-block.png" id="7_a6wyp"]
-[ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="8_pd6ps"]
+[ext_resource type="Script" path="res://scripts/tetris.gd" id="1_j08jq"]
+[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_wtr31"]
+[ext_resource type="Texture2D" uid="uid://dyey4220vadmr" path="res://assets/tetris/tetris.png" id="3_qi4h8"]
+[ext_resource type="Texture2D" uid="uid://c3jvb2omxn1b0" path="res://assets/tetris/L-block.png" id="4_orplt"]
+[ext_resource type="Texture2D" uid="uid://c212xawx23k3u" path="res://assets/tetris/I-block.png" id="5_sbxci"]
+[ext_resource type="Texture2D" uid="uid://b8t2bduxx23m3" path="res://assets/tetris/Z-block.png" id="6_2w5an"]
+[ext_resource type="Texture2D" uid="uid://s3qldfpw6hin" path="res://assets/tetris/O-block.png" id="7_13cry"]
+[ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="8_kt805"]
+[ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="9_aqdng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlhwu"]
 size = Vector2(616, 23.5)
@@ -23,19 +23,19 @@ size = Vector2(20, 649)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4k3ad")
+"texture": ExtResource("4_orplt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_v3y7l")
+"texture": ExtResource("5_sbxci")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ipim8")
+"texture": ExtResource("6_2w5an")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_a6wyp")
+"texture": ExtResource("7_13cry")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_pd6ps")
+"texture": ExtResource("8_kt805")
 }],
 "loop": true,
 "name": &"default",
@@ -73,17 +73,25 @@ shadow_offset = Vector2(3.65, 1)
 radius = 30.0
 
 [node name="Tetris" type="Node2D"]
-script = ExtResource("1_cmjnl")
+script = ExtResource("1_j08jq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(294, 326)
 
 [node name="Background" type="Sprite2D" parent="Camera2D"]
-texture = ExtResource("2_hhera")
+texture = ExtResource("2_wtr31")
+
+[node name="Panel" type="Panel" parent="Camera2D/Background"]
+modulate = Color(0.846982, 0.919255, 0.976129, 1)
+self_modulate = Color(0, 0.843137, 1, 1)
+offset_left = -577.0
+offset_top = 379.0
+offset_right = 580.0
+offset_bottom = 436.0
 
 [node name="Tetris2" type="Sprite2D" parent="."]
 position = Vector2(288, 336)
-texture = ExtResource("1_l0sxk")
+texture = ExtResource("3_qi4h8")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 33
@@ -118,7 +126,7 @@ position = Vector2(20, 64)
 
 [node name="Tetris" type="Sprite2D" parent="."]
 position = Vector2(288, 56)
-texture = ExtResource("1_l0sxk")
+texture = ExtResource("3_qi4h8")
 vframes = 6
 
 [node name="Timer" type="Timer" parent="."]
@@ -150,7 +158,7 @@ text = "0000000"
 label_settings = SubResource("LabelSettings_m8s0b")
 horizontal_alignment = 1
 
-[node name="player" parent="." instance=ExtResource("2_n22dm")]
+[node name="player" parent="." instance=ExtResource("9_aqdng")]
 position = Vector2(175, 512)
 
 [node name="Victory" type="Area2D" parent="."]

@@ -67,7 +67,7 @@ func place_bomb():
 
 func Victory():
 	global.commands.append("destroy")
-	get_tree().change_scene_to_file("res://nodes/world.tscn")
+	get_tree().change_scene_to_file("res://nodes/worlds/world.tscn")
 
 func _check( id ):
 	var pos = Vector2(0,0)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://duktmkh43q26s"]
 
-[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_1e37t"]
-[ext_resource type="Texture2D" uid="uid://c14je27i8tu8l" path="res://assets/minesweeper.png" id="2_kvfqp"]
-[ext_resource type="Script" path="res://scripts/minesweeper.gd" id="2_tmp3n"]
+[ext_resource type="Script" path="res://scripts/minesweeper.gd" id="1_2cqnl"]
+[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_xjbmr"]
+[ext_resource type="Texture2D" uid="uid://c14je27i8tu8l" path="res://assets/minesweeper.png" id="3_ashn8"]
 
 [sub_resource type="FontVariation" id="FontVariation_ub2ew"]
 
@@ -12,7 +12,7 @@ font_size = 55
 font_color = Color(0, 0, 0, 1)
 
 [node name="Minesweeper" type="Node2D"]
-script = ExtResource("2_tmp3n")
+script = ExtResource("1_2cqnl")
 map_size = Vector2(12, 12)
 mines = 12
 
@@ -21,11 +21,19 @@ position = Vector2(78, 74)
 zoom = Vector2(2.145, 2.145)
 
 [node name="Background" type="Sprite2D" parent="Camera2D"]
-texture = ExtResource("2_1e37t")
+texture = ExtResource("2_xjbmr")
+
+[node name="Panel" type="Panel" parent="Camera2D/Background"]
+modulate = Color(0.846982, 0.919255, 0.976129, 1)
+self_modulate = Color(0, 0.843137, 1, 1)
+offset_left = -577.0
+offset_top = 379.0
+offset_right = 580.0
+offset_bottom = 436.0
 
 [node name="Minesweeper" type="Sprite2D" parent="."]
 position = Vector2(80, 64)
-texture = ExtResource("2_kvfqp")
+texture = ExtResource("3_ashn8")
 
 [node name="Timer" type="Label" parent="."]
 offset_top = -55.0

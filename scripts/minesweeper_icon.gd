@@ -7,4 +7,4 @@ func _ready() -> void:
 		queue_free()
 
 func Use() -> void:
-	get_tree().change_scene_to_file("res://nodes/minesweeper.tscn")
+	get_tree().change_scene_to_file("res://nodes/worlds/minesweeper.tscn")

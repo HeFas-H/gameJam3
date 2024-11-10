@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GayJam"
-run/main_scene="res://nodes/world.tscn"
+run/main_scene="res://nodes/worlds/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 
 [autoload]

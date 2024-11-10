@@ -9,6 +9,8 @@ const JUMP_VELOCITY = -400.0
 
 var state = 0
 
+var can_jump = true
+
 enum status {
 	idle = 0,
 	walk = 1,
@@ -16,10 +18,11 @@ enum status {
 	fly = 3,
 }
 
-var can_dash = true
-
 func _physics_process(delta: float) -> void:
+	
 	if not is_on_floor():
+		if $DashReload.is_stopped() and can_jump:
+			$DashReload.start()
 		velocity += global.gravity * delta
 		if state != 2:
 			state = 3
@@ -35,13 +38,17 @@ func _physics_process(delta: float) -> void:
 			anim.play("fly")
 		_:
 			anim.play("idle")
-	
+
+	if is_on_floor() and !can_jump:
+		can_jump = true
+
 	if !console.line.has_focus():
 	
-		if Input.is_action_just_pressed("w") and is_on_floor():
+		if Input.is_action_just_pressed("w") and can_jump:
+			can_jump = false
 			velocity.y = JUMP_VELOCITY
 			state = 2
-
+		
 		var direction := Input.get_axis("a", "d")
 		
 		if direction == 1:
@@ -58,12 +65,6 @@ func _physics_process(delta: float) -> void:
 				state = 0
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		#if Input.is_action_just_pressed("dash"):
-			#if can_dash:
-			#	velocity.x = direction * SPEED * 40
-			#	can_dash = false
-			#	$DashReload.start()
-		
 	move_and_slide()
 
 
@@ -77,6 +78,5 @@ func _on_console_trigger_entered(body: Node2D) -> void:
 func _on_console_trigger_exited(body: Node2D) -> void:
 	console.console_obj.erase(body)
 
-
 func _on_dash_reload() -> void:
-	can_dash = true
+	can_jump = false
