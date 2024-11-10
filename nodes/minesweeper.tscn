@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://duktmkh43q26s"]
+
+[ext_resource type="Texture2D" uid="uid://c14je27i8tu8l" path="res://assets/minesweeper.png" id="2_kvfqp"]
+[ext_resource type="Script" path="res://scripts/minesweeper.gd" id="2_tmp3n"]
+
+[sub_resource type="FontVariation" id="FontVariation_ub2ew"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0pmy"]
+font = SubResource("FontVariation_ub2ew")
+font_size = 55
+font_color = Color(0, 0, 0, 1)
+
+[node name="Minesweeper" type="Node2D"]
+script = ExtResource("2_tmp3n")
+map_size = Vector2(12, 12)
+mines = 12
+
+[node name="Minesweeper" type="Sprite2D" parent="."]
+position = Vector2(80, 64)
+texture = ExtResource("2_kvfqp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(78, 74)
+zoom = Vector2(2.145, 2.145)
+
+[node name="Timer" type="Label" parent="."]
+offset_top = -55.0
+offset_right = 232.0
+offset_bottom = 21.0
+scale = Vector2(0.327539, 0.304158)
+text = "00:00"
+label_settings = SubResource("LabelSettings_h0pmy")
+horizontal_alignment = 1
+
+[node name="Mines" type="Label" parent="."]
+offset_left = 100.0
+offset_top = -55.0
+offset_right = 315.0
+offset_bottom = 21.0
+scale = Vector2(0.327539, 0.304158)
+text = "0"
+label_settings = SubResource("LabelSettings_h0pmy")
+horizontal_alignment = 1

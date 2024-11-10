@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://caff0c3q7gh3t"]
+
+[ext_resource type="Script" path="res://scripts/block_ai.gd" id="1_i0oqn"]
+[ext_resource type="Texture2D" uid="uid://s3qldfpw6hin" path="res://assets/tetris/O-block.png" id="1_mox8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7150v"]
+size = Vector2(57.5898, 57.5898)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmvli"]
+size = Vector2(62, 62)
+
+[node name="SquareBlock" type="CharacterBody2D"]
+position = Vector2(32, 32)
+disable_mode = 1
+floor_constant_speed = true
+script = ExtResource("1_i0oqn")
+
+[node name="O-block" type="Sprite2D" parent="."]
+texture = ExtResource("1_mox8b")
+
+[node name="Damage" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage"]
+position = Vector2(9.53674e-07, 9.53674e-07)
+scale = Vector2(1.07658, 1.07658)
+shape = SubResource("RectangleShape2D_7150v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pmvli")
+
+[connection signal="body_entered" from="Damage" to="." method="_on_triggered"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq6pxu8j0823y"]
+
+[ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="1_vcvtv"]
+[ext_resource type="Texture2D" uid="uid://bpueeq1d41pxi" path="res://assets/timed/desk.png" id="2_q1k37"]
+[ext_resource type="Texture2D" uid="uid://dfo3d0vpwfv37" path="res://assets/rar.png" id="3_5opcu"]
+[ext_resource type="Script" path="res://nodes/ladder.gd" id="3_gynf1"]
+[ext_resource type="Texture2D" uid="uid://t6f8lmahjty8" path="res://assets/icon_folder.png" id="5_rxfh6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2v6by"]
+size = Vector2(447, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xuau4"]
+size = Vector2(45, 41)
+
+[node name="World" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_vcvtv")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 59)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_2v6by")
+
+[node name="Desk" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+scale = Vector2(8.72, 1)
+texture = ExtResource("2_q1k37")
+
+[node name="Ladder" type="StaticBody2D" parent="."]
+position = Vector2(201, 13)
+script = ExtResource("3_gynf1")
+metadata/Length = 0
+
+[node name="Rar" type="Sprite2D" parent="Ladder"]
+texture = ExtResource("3_5opcu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_xuau4")
+
+[node name="IconFolder" type="Sprite2D" parent="."]
+position = Vector2(115, -30)
+texture = ExtResource("5_rxfh6")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c18qx7a6frjh1"]
+
+[ext_resource type="Script" path="res://scripts/minesweeper_icon.gd" id="1_dsbq0"]
+[ext_resource type="Texture2D" uid="uid://dop5yu83ai5vn" path="res://assets/icon_minesweeper.png" id="2_2ktm8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cko0m"]
+size = Vector2(32, 32)
+
+[node name="MinesweeperIcon" type="StaticBody2D"]
+collision_layer = 17
+script = ExtResource("1_dsbq0")
+metadata/coms = ["use"]
+
+[node name="IconMinesweeper" type="Sprite2D" parent="."]
+texture = ExtResource("2_2ktm8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cko0m")

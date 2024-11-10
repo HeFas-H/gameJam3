@@ -1,0 +1,160 @@
+[gd_scene load_steps=16 format=3 uid="uid://sjaafxbsrgsa"]
+
+[ext_resource type="Script" path="res://scripts/tetris.gd" id="1_cmjnl"]
+[ext_resource type="Texture2D" uid="uid://dyey4220vadmr" path="res://assets/tetris/tetris.png" id="1_l0sxk"]
+[ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="2_n22dm"]
+[ext_resource type="Texture2D" uid="uid://c3jvb2omxn1b0" path="res://assets/tetris/L-block.png" id="4_4k3ad"]
+[ext_resource type="Texture2D" uid="uid://c212xawx23k3u" path="res://assets/tetris/I-block.png" id="5_v3y7l"]
+[ext_resource type="Texture2D" uid="uid://b8t2bduxx23m3" path="res://assets/tetris/Z-block.png" id="6_ipim8"]
+[ext_resource type="Texture2D" uid="uid://s3qldfpw6hin" path="res://assets/tetris/O-block.png" id="7_a6wyp"]
+[ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="8_pd6ps"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlhwu"]
+size = Vector2(616, 23.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7ylh"]
+size = Vector2(20, 474)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t5jr7"]
+size = Vector2(20, 649)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5d8hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_4k3ad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v3y7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ipim8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a6wyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pd6ps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontFile" id="FontFile_106o7"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/55/0/ascent = 0.0
+cache/0/55/0/descent = 0.0
+cache/0/55/0/underline_position = 0.0
+cache/0/55/0/underline_thickness = 0.0
+cache/0/55/0/scale = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_m8s0b"]
+font = SubResource("FontFile_106o7")
+font_size = 55
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3.65, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27suf"]
+radius = 30.0
+
+[node name="Tetris" type="Node2D"]
+script = ExtResource("1_cmjnl")
+
+[node name="Tetris2" type="Sprite2D" parent="."]
+position = Vector2(288, 336)
+texture = ExtResource("1_l0sxk")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, 592.75)
+shape = SubResource("RectangleShape2D_jlhwu")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(10, 344)
+shape = SubResource("RectangleShape2D_y7ylh")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(350, 344)
+shape = SubResource("RectangleShape2D_y7ylh")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-10, 324.5)
+shape = SubResource("RectangleShape2D_t5jr7")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(586, 324.5)
+shape = SubResource("RectangleShape2D_t5jr7")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(288, -11.5)
+shape = SubResource("RectangleShape2D_jlhwu")
+
+[node name="Marker" type="Node2D" parent="."]
+position = Vector2(20, 64)
+
+[node name="Tetris" type="Sprite2D" parent="."]
+position = Vector2(288, 56)
+texture = ExtResource("1_l0sxk")
+vframes = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="NextBlock" type="AnimatedSprite2D" parent="."]
+position = Vector2(450, 350)
+sprite_frames = SubResource("SpriteFrames_5d8hl")
+frame = 4
+
+[node name="BestScore" type="Label" parent="."]
+offset_left = 92.0
+offset_top = 39.0
+offset_right = 307.0
+offset_bottom = 115.0
+scale = Vector2(0.623021, 0.578547)
+text = "0104200"
+label_settings = SubResource("LabelSettings_m8s0b")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="."]
+offset_left = 303.0
+offset_top = 39.0
+offset_right = 518.0
+offset_bottom = 115.0
+scale = Vector2(0.623021, 0.578547)
+text = "0000000"
+label_settings = SubResource("LabelSettings_m8s0b")
+horizontal_alignment = 1
+
+[node name="player" parent="." instance=ExtResource("2_n22dm")]
+position = Vector2(175, 512)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(294, 326)
+
+[node name="Victory" type="Area2D" parent="."]
+position = Vector2(489, 550)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Victory"]
+shape = SubResource("CircleShape2D_27suf")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Victory" to="." method="_on_victory_entered"]
