@@ -44,7 +44,4 @@ position = Vector2(16, -16)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_hrvh6")
 
-[node name="Delay" type="Timer" parent="."]
-
 [connection signal="body_entered" from="Damage" to="." method="_on_triggered"]
-[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

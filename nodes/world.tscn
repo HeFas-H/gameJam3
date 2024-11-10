@@ -85,5 +85,9 @@ offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
 
-[node name="FileObstacle" parent="." instance=ExtResource("8_oa7tg")]
-position = Vector2(-214, 50)
+[node name="Other" type="Node2D" parent="."]
+
+[node name="FileObstacle" parent="Other" instance=ExtResource("8_oa7tg")]
+position = Vector2(71, 225)
+metadata/can_disappear = true
+metadata/can_reload = true

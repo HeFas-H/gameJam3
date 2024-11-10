@@ -62,4 +62,4 @@ func _on_victory_entered(body: Node2D) -> void:
 	get_tree().change_scene_to_file("res://nodes/world.tscn")
 
 func _on_delay_timeout() -> void:
-	pass # Replace with function body.
+	pass

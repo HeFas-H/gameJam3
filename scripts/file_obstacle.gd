@@ -24,4 +24,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$Timer.start()
 
 func _on_timer_timeout() -> void:
-	queue_free()
+	if get_meta("can_reload"):
+		visible = false
+		collision_layer = 0
+		$Area2D.collision_mask = 0
+		$Visible.start()
+	else:
+		queue_free()
+
+func _on_visible_timeout() -> void:
+	visible = true
+	$Area2D.collision_mask = 3
+	collision_layer = 1
