@@ -33,4 +33,9 @@ shape = SubResource("RectangleShape2D_sdost")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_i68qi")
 
+[node name="Delay" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="Damage" to="." method="_on_triggered"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

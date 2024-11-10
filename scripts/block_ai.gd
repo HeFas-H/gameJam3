@@ -11,10 +11,13 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity += get_gravity()/1.2 * delta
+		velocity += get_gravity() * delta
 		move_and_slide()
 
 func _on_triggered(_body: Node2D) -> void:
 	if player == _body:
 		get_tree().reload_current_scene()
-		
+
+var delay = false
+func _on_delay_timeout() -> void:
+	delay = true

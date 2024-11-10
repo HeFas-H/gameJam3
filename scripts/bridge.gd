@@ -14,7 +14,7 @@ func Destroy() -> void:
 		el.queue_free()
 	for i in get_meta("Length"):
 		var obst_file = obstacle.instantiate()
-		obst_file.pos = Vector2((i+1)*48, 0) - position
+		obst_file.pos = Vector2((i+1)*48, 0) - global_position
 		obst_file.set_meta("can_disappear", get_meta("can_disappear"))
 		obstacles.add_child(obst_file)
 	if !get_meta("can_reload"):

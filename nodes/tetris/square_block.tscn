@@ -31,4 +31,7 @@ shape = SubResource("RectangleShape2D_7150v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pmvli")
 
+[node name="Delay" type="Timer" parent="."]
+
 [connection signal="body_entered" from="Damage" to="." method="_on_triggered"]
+[connection signal="timeout" from="Delay" to="." method="_on_delay_timeout"]

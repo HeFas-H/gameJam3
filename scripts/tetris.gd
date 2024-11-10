@@ -41,6 +41,8 @@ var queue = {
 	26: {rotation = 0, type = 0, pos_x = 16*13, dir = Vector2(0,3), scale = Vector2(-1,1)},
 }
 
+
+
 var i = 0
 func _on_timer_timeout() -> void:
 	var block = blocks[queue[i].type].instantiate()
@@ -58,3 +60,6 @@ func _on_timer_timeout() -> void:
 func _on_victory_entered(body: Node2D) -> void:
 	global.commands.append("gravity")
 	get_tree().change_scene_to_file("res://nodes/world.tscn")
+
+func _on_delay_timeout() -> void:
+	pass # Replace with function body.

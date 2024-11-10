@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=10 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_qvjn7"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="1_vcvtv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_83vai"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="5_ppe6b"]
 [ext_resource type="PackedScene" uid="uid://c18qx7a6frjh1" path="res://nodes/minesweeper_icon.tscn" id="7_fivns"]
+[ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="8_oa7tg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v6by"]
 size = Vector2(1152.38, 16)
@@ -24,7 +25,7 @@ texture = ExtResource("1_qvjn7")
 position = Vector2(0, 59)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/StaticBody2D"]
-position = Vector2(0.1875, 365)
+position = Vector2(0.1875, 331)
 shape = SubResource("RectangleShape2D_2v6by")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/StaticBody2D"]
@@ -42,7 +43,7 @@ rotation = 1.57079
 shape = SubResource("RectangleShape2D_2v6by")
 
 [node name="Objects" type="Node2D" parent="."]
-position = Vector2(0, 361)
+position = Vector2(0, 344)
 
 [node name="Bridge" parent="Objects" instance=ExtResource("3_n3ea6")]
 position = Vector2(385, 2)
@@ -71,7 +72,18 @@ floor_block_on_wall = false
 position = Vector2(289, 9)
 
 [node name="player" parent="." instance=ExtResource("1_vcvtv")]
-position = Vector2(-47, 365)
+position = Vector2(-47, 335)
 
 [node name="MinesweeperIcon" parent="." instance=ExtResource("7_fivns")]
 position = Vector2(388, 297)
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.846982, 0.919255, 0.976129, 1)
+self_modulate = Color(0, 0.843137, 1, 1)
+offset_left = -577.0
+offset_top = 379.0
+offset_right = 580.0
+offset_bottom = 436.0
+
+[node name="FileObstacle" parent="." instance=ExtResource("8_oa7tg")]
+position = Vector2(-214, 50)
