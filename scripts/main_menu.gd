@@ -8,6 +8,7 @@ func _ready() -> void:
 		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = true
 	else:
 		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = false
+	$PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer._ready()
 
 func _on_button_start_pressed() -> void:
 	global.commands = ["use", "help", "clear"]
@@ -17,4 +18,5 @@ func _on_button_continue_pressed() -> void:
 	get_tree().change_scene_to_file(global.levels[global.cur_level])
 
 func _on_button_exit_pressed() -> void:
+	global.Save()
 	get_tree().quit()

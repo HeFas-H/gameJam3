@@ -3,9 +3,9 @@ extends entity_aizek
 const SPEED = 300.0
 
 @onready var anim = $AnimatedSprite2D
-@onready var console = $Console
+#@onready var console = $Console
 
-@onready var projectile = preload("res://nodes/bullet.tscn")
+@onready var projectile = preload("res://nodes/aizek/bullet.tscn")
 
 var state = 0
 

@@ -19,4 +19,6 @@ func _on_button_continue_pressed() -> void:
 
 
 func _on_button_exit_pressed() -> void:
-	get_tree().change_scene_to_file("res://nodes/main_menu.tscn")
+	global.Save()
+	get_tree().change_scene_to_file("res://nodes/worlds/main_menu.tscn")
+	

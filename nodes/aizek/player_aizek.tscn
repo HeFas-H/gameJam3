@@ -1,8 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c35cpb5x0acfp"]
+[gd_scene load_steps=16 format=3 uid="uid://c35cpb5x0acfp"]
 
 [ext_resource type="Script" path="res://scripts/player_aizek.gd" id="1_oqbhh"]
 [ext_resource type="Texture2D" uid="uid://3haarbpyde6a" path="res://assets/player_walk_set.png" id="2_uhg3m"]
-[ext_resource type="PackedScene" uid="uid://bgob3k0tk53pk" path="res://nodes/ui/console.tscn" id="3_ijkty"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ss8ys"]
 radius = 18.0
@@ -125,18 +124,14 @@ sprite_frames = SubResource("SpriteFrames_oou0k")
 animation = &"walk"
 
 [node name="ConsoleZone" type="Area2D" parent="."]
+process_mode = 4
+visible = false
 collision_layer = 16
 collision_mask = 16
 input_pickable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ConsoleZone"]
 shape = SubResource("CircleShape2D_2ol63")
-
-[node name="Console" parent="." instance=ExtResource("3_ijkty")]
-offset_left = -545.0
-offset_top = -422.0
-offset_right = -544.544
-offset_bottom = -422.12
 
 [node name="ShootDelay" type="Timer" parent="."]
 wait_time = 0.5
