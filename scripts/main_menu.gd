@@ -1,7 +1,7 @@
 extends Control
 
 func _ready() -> void:
-	if !global.is_loaded:
+	if !FileAccess.file_exists(global.PATH):
 		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = true
 	else:
 		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = false

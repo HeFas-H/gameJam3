@@ -32,6 +32,7 @@ size = Vector2(48, 64)
 disable_mode = 1
 script = ExtResource("1_q82o2")
 metadata/can_disappear = false
+metadata/can_reload = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kg7e0")

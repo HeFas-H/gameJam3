@@ -7,7 +7,7 @@ var dir = Vector2(0,3)
 
 func _ready() -> void:
 	for i in trigger.get_children():
-		i.position = i.position+dir*3
+		i.position = i.position+dir*2
 	var timer = Timer.new()
 	timer.autostart = false
 	timer.one_shot = true

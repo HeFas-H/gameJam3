@@ -41,8 +41,6 @@ var queue = {
 	26: {rotation = 0, type = 0, pos_x = 16*13, dir = Vector2(0,3), scale = Vector2(-1,1)},
 }
 
-
-
 var i = 0
 func _on_timer_timeout() -> void:
 	var block = blocks[queue[i].type].instantiate()

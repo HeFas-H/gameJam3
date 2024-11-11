@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0sn0fwyb47no"
-path="res://.godot/imported/mibik (7).png-e31a0fd7ed2544f1c43321d1b99a022e.ctex"
+uid="uid://b04o660v2g2tb"
+path="res://.godot/imported/mibik (10).png-d85fdbe98a45d12ce3c2995e1eb9be3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mibik/mibik (7).png"
-dest_files=["res://.godot/imported/mibik (7).png-e31a0fd7ed2544f1c43321d1b99a022e.ctex"]
+source_file="res://assets/aizek/mibik (10).png"
+dest_files=["res://.godot/imported/mibik (10).png-d85fdbe98a45d12ce3c2995e1eb9be3a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0k5uat60dtjo"
-path="res://.godot/imported/mibik (11).png-52f624b5d4eb90e9ea655d44a4c6bdb0.ctex"
+uid="uid://ctjg8liofy0g0"
+path="res://.godot/imported/enemy_2.png-341ce602758be632e384bb188727ea9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/mibik/mibik (11).png"
-dest_files=["res://.godot/imported/mibik (11).png-52f624b5d4eb90e9ea655d44a4c6bdb0.ctex"]
+source_file="res://assets/aizek/enemy_2.png"
+dest_files=["res://.godot/imported/enemy_2.png-341ce602758be632e384bb188727ea9d.ctex"]
 
 [params]
 

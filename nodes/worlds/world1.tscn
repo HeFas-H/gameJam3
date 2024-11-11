@@ -41,31 +41,24 @@ metadata/size = 2
 
 [node name="FileObstacle2" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-136, 317)
-metadata/can_reload = false
 
 [node name="FileObstacle4" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-243, 261)
-metadata/can_reload = false
 
 [node name="FileObstacle5" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(56, 27)
-metadata/can_reload = false
 
 [node name="FileObstacle8" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(294, 141)
-metadata/can_reload = false
 
 [node name="FileObstacle9" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-431, -161)
-metadata/can_reload = false
 
 [node name="FileObstacle10" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(499, -282)
-metadata/can_reload = false
 
 [node name="FileObstacle3" parent="Other" instance=ExtResource("6_oqutb")]
 position = Vector2(-320, 333)
-metadata/can_reload = false
 
 [node name="Walls" type="Node2D" parent="."]
 

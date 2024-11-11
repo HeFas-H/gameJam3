@@ -12,8 +12,6 @@ var state = 0
 enum status {
 	idle = 0,
 	walk = 1,
-	jump = 2,
-	fly = 3,
 }
 
 var last_dir = Vector2(0,1)
