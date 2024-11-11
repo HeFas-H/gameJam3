@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 			anim.play("attack")
 		_:
 			anim.play("idle")
-
+	
 	if !$ShootDelay.is_stopped():
 		return
 	

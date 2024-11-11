@@ -1,7 +1,7 @@
-extends PanelContainer
+extends Control
 
-@onready var slider = $VBoxContainer/HSlider
-# Called when the node enters the scene tree for the first time.
+@onready var slider = $HSlider
+
 func _ready() -> void:
 	slider.value = global.volume_scale
 	#print(slider.value)

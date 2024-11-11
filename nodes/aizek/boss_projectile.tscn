@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bitl762x227gg"]
+
+[ext_resource type="Script" path="res://scripts/lightbolt.gd" id="1_jmqeq"]
+[ext_resource type="Texture2D" uid="uid://dp7fefo0aklxt" path="res://assets/aizek/flash_0.png" id="1_o4stv"]
+[ext_resource type="Texture2D" uid="uid://c3jopwvh42n67" path="res://assets/aizek/flash_1.png" id="2_kbalf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx5n7"]
+size = Vector2(7, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41y20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o4stv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kbalf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54o6s"]
+size = Vector2(17, 61)
+
+[node name="Lightbolt" type="Node2D"]
+rotation = -0.523599
+script = ExtResource("1_jmqeq")
+
+[node name="Node2D" type="RigidBody2D" parent="."]
+rotation = -2.12946
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
+position = Vector2(-1.68301, 1.91506)
+rotation = 0.523599
+shape = SubResource("RectangleShape2D_cx5n7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+sprite_frames = SubResource("SpriteFrames_41y20")
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(0.183014, 0.683011)
+rotation = 0.523599
+shape = SubResource("RectangleShape2D_54o6s")
+
+[connection signal="body_entered" from="Node2D/Area2D" to="." method="_on_body_entered"]

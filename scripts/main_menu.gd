@@ -6,7 +6,7 @@ func _ready() -> void:
 	else:
 		$ContinueBtn/Button.disabled = false
 		global.Load()
-	$SettingsBtn/PanelContainer._ready()
+	$SettingsBtn/Control._ready()
 
 func _on_button_start_pressed() -> void:
 	global.commands = ["use", "help", "clear"]

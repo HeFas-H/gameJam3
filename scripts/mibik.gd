@@ -1,0 +1,67 @@
+extends StaticBody2D
+
+var health = 500
+var damage = 10
+
+@onready var flash = preload("res://nodes/aizek/boss_projectile.tscn")
+@onready var player = get_tree().get_nodes_in_group("player")[0]
+@onready var anim = $AnimatedSprite2D
+var dmg_timer
+
+func TakeDamage( dmg ):
+	health = health - dmg
+	if health <= 0:
+		Die()
+	if dmg > 0:
+		anim.self_modulate = Color(1,0.2,0.2,1)
+	else:
+		anim.self_modulate = Color(0.2,1,0.2,1)
+	dmg_timer.start(0.2)
+
+func Die():
+	queue_free()
+
+func _ready() -> void:
+	dmg_timer = Timer.new()
+	dmg_timer.autostart = false
+	dmg_timer.one_shot = true
+	add_child(dmg_timer)
+	dmg_timer.connect("timeout", Callable(self, "_timer_dmg_timeout") )
+	
+func _timer_dmg_timeout() -> void:
+	anim.self_modulate = Color(1,1,1,1)
+
+var state = 0
+
+enum status {
+	idle = 0,
+	attack = 1,
+}
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	match state:
+		0:
+			anim.play("idle")
+		1:
+			anim.play("attack")
+		_:
+			anim.play("idle")
+	if health < 250 and $Timer.wait_time < 0.8:
+		anim.speed_scale = 2
+		
+
+func _on_timer_timeout() -> void:
+	state = 1
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if state == 2:
+		state = 0
+	else:
+		state = 2
+		var lightbolt = flash.instantiate()
+		get_tree().root.add_child(lightbolt)
+		lightbolt.damage = damage
+		lightbolt.global_position = global_position + Vector2(-50, 0)
+		lightbolt.phys.linear_velocity = lightbolt.global_position.direction_to(player.global_position)*200
+		lightbolt.look_at(player.global_position)

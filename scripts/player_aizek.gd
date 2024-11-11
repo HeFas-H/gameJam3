@@ -23,7 +23,7 @@ func _deploy() -> void:
 	anim_error.play("default")
 
 func _physics_process(delta: float) -> void:
-	print(health)
+
 	match state:
 		0:
 			anim.play("idle")

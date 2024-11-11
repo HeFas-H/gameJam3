@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://df1cjvnosxive"]
+[gd_scene load_steps=10 format=3 uid="uid://df1cjvnosxive"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jdx06"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="2_0ugj3"]
@@ -9,10 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b7o2iemg2b3hl" path="res://assets/quie_btn.png" id="6_q40rg"]
 [ext_resource type="Texture2D" uid="uid://crbg0ce5ip03d" path="res://assets/settings_btn.png" id="7_j3svn"]
 [ext_resource type="Texture2D" uid="uid://dnwkf5f5k3533" path="res://assets/audio_icon.png" id="9_tciln"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_b0wkl"]
-font_size = 20
-font_color = Color(0, 0, 0, 1)
 
 [node name="World" type="Node2D"]
 process_mode = 3
@@ -28,7 +24,7 @@ autoplay = true
 
 [node name="MenuBack" type="Sprite2D" parent="."]
 position = Vector2(-5, -8)
-scale = Vector2(1.96917, 1.8025)
+scale = Vector2(1.97249, 1.8025)
 texture = ExtResource("4_r5rqj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -70,36 +66,30 @@ offset_bottom = 60.0
 metadata/_edit_use_anchors_ = true
 
 [node name="SettingsBtn" type="Sprite2D" parent="."]
-position = Vector2(225, -250)
+position = Vector2(267.625, -252.25)
+scale = Vector2(1.385, 1.385)
 texture = ExtResource("7_j3svn")
 
-[node name="PanelContainer" type="PanelContainer" parent="SettingsBtn"]
-self_modulate = Color(1, 1, 1, 0)
-offset_left = -30.0
-offset_top = -26.0
-offset_right = 105.0
-offset_bottom = 22.0
-scale = Vector2(0.528384, 0.587196)
-size_flags_horizontal = 3
+[node name="Control" type="Control" parent="SettingsBtn"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 script = ExtResource("2_0ugj3")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsBtn/PanelContainer"]
+[node name="HSlider" type="HSlider" parent="SettingsBtn/Control"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="SettingsBtn/PanelContainer/VBoxContainer"]
-layout_mode = 2
-text = "Sound Master
-"
-label_settings = SubResource("LabelSettings_b0wkl")
-
-[node name="HSlider" type="HSlider" parent="SettingsBtn/PanelContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = -38.2671
+offset_top = -35.3791
+offset_right = 12.7329
+offset_bottom = -5.37909
+scale = Vector2(1.6341, 1.6341)
 max_value = 1.0
 step = 0.05
 
-[node name="AudioIcon" type="Sprite2D" parent="SettingsBtn/PanelContainer"]
-position = Vector2(-24.6033, 27.2482)
-scale = Vector2(2.3244, 2.3244)
+[node name="AudioIcon" type="Sprite2D" parent="SettingsBtn/Control"]
+position = Vector2(-48.3755, -9.38631)
+scale = Vector2(0.98343, 1.09289)
 texture = ExtResource("9_tciln")
 
 [connection signal="mouse_entered" from="ContinueBtn/Button" to="." method="_on_continue_m_entered"]
@@ -111,3 +101,4 @@ texture = ExtResource("9_tciln")
 [connection signal="mouse_entered" from="QuiteBtn/Button3" to="." method="_on_quite_m_entered"]
 [connection signal="mouse_exited" from="QuiteBtn/Button3" to="." method="_on_quite_m_exited"]
 [connection signal="pressed" from="QuiteBtn/Button3" to="." method="_on_button_exit_pressed"]
+[connection signal="value_changed" from="SettingsBtn/Control/HSlider" to="SettingsBtn/Control" method="_on_h_slider_value_changed"]
