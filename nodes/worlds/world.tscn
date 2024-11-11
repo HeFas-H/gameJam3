@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=17 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q5mad"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="8_5udh3"]
 [ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="9_xtrhq"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="14_lwqel"]
+[ext_resource type="PackedScene" uid="uid://cjimwij7xmtb7" path="res://nodes/tutor.tscn" id="15_6t41e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2v6by"]
 size = Vector2(1152.38, 16)
@@ -141,7 +142,9 @@ metadata/is_locked = false
 
 [node name="player" parent="." instance=ExtResource("6_fdnoq")]
 position = Vector2(-47, 335)
-scale = Vector2(1.2113, 1.2113)
+
+[node name="Tutorial" parent="." instance=ExtResource("15_6t41e")]
+position = Vector2(7, -1)
 
 [node name="Audio" type="Node2D" parent="."]
 

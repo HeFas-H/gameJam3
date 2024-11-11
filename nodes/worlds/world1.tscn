@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ulpv8dnjf13o"]
+[gd_scene load_steps=17 format=3 uid="uid://ulpv8dnjf13o"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8g3bn"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="9_ma76m"]
 [ext_resource type="PackedScene" uid="uid://dr5is2q1t4cs6" path="res://nodes/tetris/anti_virus_decor.tscn" id="12_cq66p"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="14_v3762"]
+[ext_resource type="PackedScene" uid="uid://cjimwij7xmtb7" path="res://nodes/tutor.tscn" id="15_07stk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
@@ -157,12 +158,15 @@ metadata/point_2 = Vector2(0, 0)
 
 [node name="player" parent="." instance=ExtResource("7_2oaju")]
 position = Vector2(-525, 336)
-scale = Vector2(1.2113, 1.2113)
 
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("14_v3762")
 autoplay = true
+
+[node name="Tutorial" parent="." instance=ExtResource("15_07stk")]
+position = Vector2(-2, 0)
+metadata/tutorial = 2
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

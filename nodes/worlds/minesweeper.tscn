@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://duktmkh43q26s"]
+[gd_scene load_steps=17 format=3 uid="uid://duktmkh43q26s"]
 
 [ext_resource type="Script" path="res://scripts/minesweeper.gd" id="1_2cqnl"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_xjbmr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cps704pbefh8k" path="res://assets/errors/expl_3.png" id="6_54s0n"]
 [ext_resource type="Texture2D" uid="uid://18uj1n1fdm8i" path="res://assets/errors/expl_4.png" id="7_bwokm"]
 [ext_resource type="AudioStream" uid="uid://d3g4dah0xt88g" path="res://assets/sound/minesweeper_error.wav" id="8_ond7v"]
+[ext_resource type="PackedScene" uid="uid://cjimwij7xmtb7" path="res://nodes/tutor.tscn" id="11_x6206"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="12_a3ojo"]
 
 [sub_resource type="FontVariation" id="FontVariation_ub2ew"]
@@ -125,6 +126,11 @@ visible = false
 top_level = true
 position = Vector2(74, 33)
 sprite_frames = SubResource("SpriteFrames_1st8f")
+
+[node name="Tutorial" parent="." instance=ExtResource("11_x6206")]
+position = Vector2(77, 79)
+scale = Vector2(0.582389, 0.582389)
+metadata/tutorial = 1
 
 [node name="Audio" type="Node2D" parent="."]
 

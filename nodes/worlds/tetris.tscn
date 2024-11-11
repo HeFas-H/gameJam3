@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://sjaafxbsrgsa"]
+[gd_scene load_steps=23 format=3 uid="uid://sjaafxbsrgsa"]
 
 [ext_resource type="Script" path="res://scripts/tetris.gd" id="1_j08jq"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_wtr31"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://gvui45s71pnf" path="res://assets/tetris/T-block.png" id="8_kt805"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="9_aqdng"]
 [ext_resource type="AudioStream" uid="uid://3db1w5hj10df" path="res://assets/sound/tetris_ost.mp3" id="10_whtyi"]
+[ext_resource type="PackedScene" uid="uid://cjimwij7xmtb7" path="res://nodes/tutor.tscn" id="14_5gfu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jlhwu"]
 size = Vector2(616, 23.5)
@@ -195,6 +196,10 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Victory"]
 shape = SubResource("CircleShape2D_27suf")
+
+[node name="Tutorial" parent="." instance=ExtResource("14_5gfu8")]
+position = Vector2(287, 341)
+metadata/tutorial = 3
 
 [node name="Audio" type="Node2D" parent="."]
 

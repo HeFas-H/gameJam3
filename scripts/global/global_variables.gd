@@ -3,6 +3,8 @@ extends Node
 var commands = ["help", "clear", "use"] #gravity destroy %hack
 var gravity = Vector2(0, 980)
 
+var tutorial = 0
+
 var cur_level = 0
 var volume_scale = 0.3
 const PATH = "user://gamejam_troyan.save"
