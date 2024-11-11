@@ -12,11 +12,9 @@ func _process(delta: float) -> void:
 		visible = !visible
 		get_tree().paused = !get_tree().paused
 
-
 func _on_button_continue_pressed() -> void:
 	visible = !visible
 	get_tree().paused = !get_tree().paused
-
 
 func _on_button_exit_pressed() -> void:
 	global.Save()

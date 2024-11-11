@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ysaahhb6hvtv"]
+[gd_scene load_steps=14 format=3 uid="uid://ysaahhb6hvtv"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_dfwv6"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_j8ke4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="8_k01s1"]
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="9_sq77s"]
 [ext_resource type="PackedScene" uid="uid://c1qv3d5at02ak" path="res://nodes/aizek_icon.tscn" id="9_ssnsy"]
+[ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="12_woc66"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
@@ -157,8 +158,6 @@ position = Vector2(513, -303)
 
 [node name="FileObstacle6" parent="Other" instance=ExtResource("9_sq77s")]
 position = Vector2(-437, 320)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle7" parent="Other" instance=ExtResource("9_sq77s")]
 position = Vector2(57, 102)
@@ -191,5 +190,9 @@ metadata/can_disappear = true
 metadata/can_reload = true
 
 [node name="Audio" type="Node2D" parent="."]
+
+[node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_woc66")
+autoplay = true
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=4 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=16 format=4 uid="uid://lxn83kadkp4w"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_ammje"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_c5ox5"]
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="2_1h45t"]
 [ext_resource type="Texture2D" uid="uid://crk6omujek3jx" path="res://assets/aizek_tilemap.png" id="2_ha73f"]
+[ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="3_4a3io"]
 [ext_resource type="PackedScene" uid="uid://c35cpb5x0acfp" path="res://nodes/aizek/player_aizek.tscn" id="3_ho6iu"]
+[ext_resource type="Texture2D" uid="uid://0veq75b1e4m" path="res://assets/windows.png" id="4_3f6td"]
 [ext_resource type="PackedScene" uid="uid://dg1wu2u8myhq8" path="res://nodes/aizek/error_spears.tscn" id="7_80o74"]
 [ext_resource type="PackedScene" uid="uid://skww207sc1yx" path="res://nodes/aizek/spawner.tscn" id="7_n57ly"]
+[ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="8_0kvlc"]
+[ext_resource type="Texture2D" uid="uid://d1hhtp3ykt3d3" path="res://assets/aizek.png" id="11_jt6au"]
+[ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="12_mvpxu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjilr"]
 texture = ExtResource("2_ha73f")
@@ -52,6 +57,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 129
 sources/3 = SubResource("TileSetAtlasSource_tjilr")
 
+[sub_resource type="LabelSettings" id="LabelSettings_7ylew"]
+font_size = 20
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_c5ox5")
 
@@ -68,7 +76,21 @@ offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
 
+[node name="Trash2" type="Sprite2D" parent="Camera2D/Background"]
+modulate = Color(0.431373, 1, 1, 1)
+position = Vector2(-487, 406)
+texture = ExtResource("3_4a3io")
+
+[node name="Windows" type="Sprite2D" parent="Camera2D/Background"]
+position = Vector2(-541, 407)
+scale = Vector2(2.46508, 2.46508)
+texture = ExtResource("4_3f6td")
+
 [node name="InGameMenu" parent="." instance=ExtResource("2_1h45t")]
+offset_left = -576.0
+offset_top = -432.0
+offset_right = -576.0
+offset_bottom = -432.0
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-43, -45)
@@ -80,6 +102,10 @@ tile_set = SubResource("TileSet_y5mxi")
 position = Vector2(137, 27)
 
 [node name="Audio" type="Node2D" parent="."]
+
+[node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("8_0kvlc")
+autoplay = true
 
 [node name="Objects" type="Node2D" parent="."]
 
@@ -95,5 +121,52 @@ position = Vector2(228, -161)
 
 [node name="Spawner2" parent="Objects" instance=ExtResource("7_n57ly")]
 position = Vector2(385, 71)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -72.0
+offset_top = 10.0
+offset_right = -32.0
+offset_bottom = 50.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = -437.0
+offset_top = -399.0
+offset_right = 573.0
+offset_bottom = -362.0
+color = Color(0.45098, 0.294118, 0.266667, 0.713726)
+
+[node name="Panel" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -435.0
+offset_top = -396.0
+offset_right = 570.0
+offset_bottom = -365.0
+
+[node name="App" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/App"]
+layout_mode = 2
+focus_mode = 2
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Panel/App/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("11_jt6au")
+expand_mode = 3
+
+[node name="Label" type="Label" parent="Control/Panel/App/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Aisek"
+label_settings = SubResource("LabelSettings_7ylew")
+
+[node name="TextureRect2" type="TextureRect" parent="Control/Panel/App/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("12_mvpxu")
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

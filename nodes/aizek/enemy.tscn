@@ -1,10 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://3tb40y85bfun"]
+[gd_scene load_steps=15 format=3 uid="uid://3tb40y85bfun"]
 
 [ext_resource type="Script" path="res://scripts/enemy_aizek.gd" id="1_ly7oc"]
 [ext_resource type="Texture2D" uid="uid://dciymqymbhcyh" path="res://assets/aizek/enemy_1.png" id="2_llsyx"]
+[ext_resource type="Texture2D" uid="uid://cfox3pycfveod" path="res://assets/aizek/enemy_attack.png" id="2_rrtva"]
+[ext_resource type="Texture2D" uid="uid://dkpcboupp8pku" path="res://assets/aizek/enemy_attack_2.png" id="3_56d6l"]
 [ext_resource type="Texture2D" uid="uid://ctjg8liofy0g0" path="res://assets/aizek/enemy_2.png" id="3_xxu44"]
 [ext_resource type="Texture2D" uid="uid://b1x4yu7qblneg" path="res://assets/aizek/enemy_3.png" id="4_8b2si"]
+[ext_resource type="Texture2D" uid="uid://bwqkxwnshe8nd" path="res://assets/aizek/enemy_attack_3.png" id="4_aofus"]
+[ext_resource type="Texture2D" uid="uid://byypd24p2idc4" path="res://assets/aizek/enemy_attack_4.png" id="5_3oxao"]
 [ext_resource type="Texture2D" uid="uid://dfjv57rvakhol" path="res://assets/aizek/enemy_4.png" id="5_umisd"]
+[ext_resource type="Texture2D" uid="uid://df10jph0c0082" path="res://assets/aizek/enemy_attack_5.png" id="6_7gu1s"]
+[ext_resource type="Texture2D" uid="uid://bd784aax18a5e" path="res://assets/aizek/enemy_attack_6.png" id="7_ksa70"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ss8ys"]
 radius = 18.0
@@ -12,6 +18,29 @@ height = 36.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w0atw"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rrtva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_56d6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_aofus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3oxao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7gu1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ksa70")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_llsyx")
@@ -56,7 +85,7 @@ shape = SubResource("CapsuleShape2D_ss8ys")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w0atw")
-animation = &"idle"
+animation = &"attack"
 
 [node name="AttackArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -66,7 +95,7 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_krbj0")
 
 [node name="ShootDelay" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 0.6
 one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
