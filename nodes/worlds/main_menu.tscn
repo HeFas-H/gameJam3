@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://df1cjvnosxive"]
+[gd_scene load_steps=10 format=3 uid="uid://df1cjvnosxive"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jdx06"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="2_0ugj3"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="3_78qmm"]
-[ext_resource type="AudioStream" uid="uid://dnxeu8lcglfs2" path="res://assets/sound/button_pressed.mp3" id="3_sve4l"]
 [ext_resource type="Texture2D" uid="uid://b85hhbhfnbeca" path="res://assets/continue_btn.png" id="4_gpy61"]
 [ext_resource type="Texture2D" uid="uid://b21sm62t3ui81" path="res://assets/menu_back.png" id="4_r5rqj"]
 [ext_resource type="Texture2D" uid="uid://b5n3txs767fnr" path="res://assets/new_game_btn.png" id="5_dlwgo"]
@@ -26,9 +25,6 @@ script = ExtResource("1_jdx06")
 stream = ExtResource("3_78qmm")
 autoplay = true
 
-[node name="ButtonPressed" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("3_sve4l")
-
 [node name="MenuBack" type="Sprite2D" parent="."]
 position = Vector2(-5, -8)
 scale = Vector2(1.96917, 1.8025)
@@ -46,6 +42,7 @@ offset_left = -97.0
 offset_top = -47.0
 offset_right = 104.0
 offset_bottom = 29.0
+metadata/_edit_use_anchors_ = true
 
 [node name="NewGameBtn" type="Sprite2D" parent="."]
 position = Vector2(-5, -186)
@@ -57,6 +54,7 @@ offset_left = -183.0
 offset_top = -66.0
 offset_right = 178.0
 offset_bottom = 71.0
+metadata/_edit_use_anchors_ = true
 
 [node name="QuiteBtn" type="Sprite2D" parent="."]
 position = Vector2(-6, 133)
@@ -68,6 +66,7 @@ offset_left = -185.0
 offset_top = -77.0
 offset_right = 176.0
 offset_bottom = 60.0
+metadata/_edit_use_anchors_ = true
 
 [node name="SettingsBtn" type="Sprite2D" parent="."]
 position = Vector2(225, -250)
