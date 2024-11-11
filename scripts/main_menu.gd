@@ -5,6 +5,7 @@ func _ready() -> void:
 		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = true
 	else:
 		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = false
+		global.Load()
 	$PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer._ready()
 
 func _on_button_start_pressed() -> void:
