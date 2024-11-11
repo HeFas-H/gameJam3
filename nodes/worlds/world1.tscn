@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ulpv8dnjf13o"]
+[gd_scene load_steps=13 format=3 uid="uid://ulpv8dnjf13o"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_8g3bn"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_7pwl7"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_chj6x"]
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_dchfm"]
@@ -15,6 +16,7 @@
 size = Vector2(1152.38, 16)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_8g3bn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -158,3 +160,5 @@ offset_bottom = 436.0
 position = Vector2(-525, 336)
 
 [node name="Audio" type="Node2D" parent="."]
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

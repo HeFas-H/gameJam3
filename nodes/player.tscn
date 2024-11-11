@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjwtshs5siyc0"]
+[gd_scene load_steps=22 format=3 uid="uid://bjwtshs5siyc0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nwwcj"]
 [ext_resource type="Texture2D" uid="uid://3haarbpyde6a" path="res://assets/player_walk_set.png" id="2_hii87"]
@@ -7,13 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bbv704be7hxh4" path="res://assets/errors/matrix_error_2.png" id="5_onrsk"]
 [ext_resource type="Texture2D" uid="uid://3mhjew1bqgsk" path="res://assets/errors/matrix_error_3.png" id="6_di4aq"]
 [ext_resource type="Texture2D" uid="uid://d2jylefbq4y0q" path="res://assets/errors/matrix_error_4.png" id="7_np5js"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ss8ys"]
-radius = 18.0
-height = 36.0
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eohbj"]
-size = Vector2(36, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h8sjc"]
 atlas = ExtResource("2_hii87")
@@ -114,6 +107,10 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bxb7g"]
+radius = 16.5112
+height = 59.4402
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ol63"]
 radius = 85.0529
 
@@ -138,21 +135,19 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+scale = Vector2(1.2113, 1.2113)
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_nwwcj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
-shape = SubResource("CapsuleShape2D_ss8ys")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 10.5)
-shape = SubResource("RectangleShape2D_eohbj")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_oou0k")
 animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.65112)
+scale = Vector2(1, 1)
+shape = SubResource("CapsuleShape2D_bxb7g")
 
 [node name="ConsoleZone" type="Area2D" parent="."]
 visible = false

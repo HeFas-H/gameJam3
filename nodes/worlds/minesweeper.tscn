@@ -117,6 +117,7 @@ sprite_frames = SubResource("SpriteFrames_1st8f")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("8_ond7v")
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="VictoryDelay" to="." method="_on_delay_timeout"]
 [connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
 [connection signal="timeout" from="EXPL_TIMER" to="." method="_on_expl_timer_timeout"]

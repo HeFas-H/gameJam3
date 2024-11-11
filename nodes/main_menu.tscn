@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3kh52d1fxira"]
+[gd_scene load_steps=3 format=3 uid="uid://df1cjvnosxive"]
 
-[ext_resource type="Script" path="res://scripts/in_game_menu.gd" id="1_im52r"]
-[ext_resource type="Script" path="res://scripts/music.gd" id="2_8j4c4"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_jdx06"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="2_0ugj3"]
 
-[node name="InGameMenu" type="Control"]
+[node name="World" type="Control"]
 process_mode = 3
-visible = false
 self_modulate = Color(1, 1, 1, 0.278431)
 top_level = true
 layout_mode = 3
@@ -16,7 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 3
-script = ExtResource("1_im52r")
+script = ExtResource("1_jdx06")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color(1, 1, 1, 0.603922)
@@ -48,7 +47,7 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Продолжить"
+text = "Новая игра"
 
 [node name="Panel2" type="Panel" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -57,6 +56,33 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel2" type="Panel" parent="PanelContainer/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Продолжить
+"
+
+[node name="Panel2" type="Panel" parent="PanelContainer/VBoxContainer/HBoxContainer3"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel4" type="Panel" parent="PanelContainer/VBoxContainer"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
@@ -74,7 +100,7 @@ size_flags_vertical = 3
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Выйти в меню"
+text = "Выйти"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
@@ -90,7 +116,7 @@ size_flags_vertical = 3
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
-script = ExtResource("2_8j4c4")
+script = ExtResource("2_0ugj3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer"]
 layout_mode = 2
@@ -116,6 +142,9 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 size_flags_vertical = 3
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_continue_pressed"]
+[node name="Audio" type="Node2D" parent="."]
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_continue_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_button_exit_pressed"]
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer/VBoxContainer/HSlider" to="PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer" method="_on_h_slider_value_changed"]

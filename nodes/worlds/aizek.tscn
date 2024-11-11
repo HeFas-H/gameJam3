@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=8 format=3 uid="uid://lxn83kadkp4w"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_ammje"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_c5ox5"]
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="2_1h45t"]
 [ext_resource type="Texture2D" uid="uid://crk6omujek3jx" path="res://assets/aizek_tilemap.png" id="2_ha73f"]
 [ext_resource type="PackedScene" uid="uid://c35cpb5x0acfp" path="res://nodes/player_aizek.tscn" id="3_ho6iu"]
@@ -53,6 +54,7 @@ physics_layer_1/collision_mask = 4
 sources/3 = SubResource("TileSetAtlasSource_tjilr")
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_c5ox5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -76,3 +78,5 @@ tile_set = SubResource("TileSet_y5mxi")
 position = Vector2(137, 27)
 
 [node name="Audio" type="Node2D" parent="."]
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

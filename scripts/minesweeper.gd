@@ -117,3 +117,6 @@ func _on_expl_timer_timeout() -> void:
 		EXPLOSION_SPRITE.scale += Vector2(0.4,0.4)
 	else:
 		$EXPL_TIMER.stop()
+
+func _on_tree_exited() -> void:
+	global.Save()

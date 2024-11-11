@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=14 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_q5mad"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_d6bjw"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_rvngs"]
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="3_8q5dc"]
@@ -16,6 +17,7 @@
 size = Vector2(1152.38, 16)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_q5mad")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -138,3 +140,5 @@ metadata/is_locked = false
 position = Vector2(-47, 335)
 
 [node name="Audio" type="Node2D" parent="."]
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

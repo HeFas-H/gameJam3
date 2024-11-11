@@ -1,15 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://ysaahhb6hvtv"]
+[gd_scene load_steps=9 format=3 uid="uid://ysaahhb6hvtv"]
 
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_dfwv6"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_j8ke4"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_omxix"]
 [ext_resource type="Texture2D" uid="uid://dohwt3fgn5cdy" path="res://assets/errors/glass_broke.png" id="3_jo0l2"]
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="4_mc7b3"]
+[ext_resource type="PackedScene" uid="uid://c3gx0ksbmjgwt" path="res://nodes/error_app.tscn" id="5_ncun3"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="6_bxw6l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_dfwv6")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -30,6 +33,10 @@ offset_left = -577.0
 offset_top = -425.0
 offset_right = -577.0
 offset_bottom = -425.0
+
+[node name="Error_app" parent="Camera2D" instance=ExtResource("5_ncun3")]
+position = Vector2(187, 90)
+metadata/repeat = 4
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -71,3 +78,5 @@ offset_bottom = 436.0
 [node name="Other" type="Node2D" parent="."]
 
 [node name="Audio" type="Node2D" parent="."]
+
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

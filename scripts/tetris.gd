@@ -63,3 +63,6 @@ func _on_victory_entered(body: Node2D) -> void:
 
 func _on_delay_timeout() -> void:
 	pass
+
+func _on_tree_exited() -> void:
+	global.Save()

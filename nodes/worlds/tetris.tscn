@@ -188,5 +188,6 @@ shape = SubResource("CircleShape2D_27suf")
 stream = ExtResource("10_whtyi")
 autoplay = true
 
+[connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Victory" to="." method="_on_victory_entered"]
