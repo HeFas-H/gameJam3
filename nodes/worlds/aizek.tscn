@@ -166,6 +166,7 @@ text = "Aisek"
 label_settings = SubResource("LabelSettings_7ylew")
 
 [node name="TextureRect2" type="TextureRect" parent="Control/Panel/App/HBoxContainer"]
+self_modulate = Color(1, 0.819608, 1, 1)
 layout_mode = 2
 texture = ExtResource("12_mvpxu")
 
