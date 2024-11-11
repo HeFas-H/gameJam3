@@ -138,6 +138,7 @@ metadata/is_locked = false
 
 [node name="player" parent="." instance=ExtResource("6_fdnoq")]
 position = Vector2(-47, 335)
+collision_mask = 3
 
 [node name="Audio" type="Node2D" parent="."]
 

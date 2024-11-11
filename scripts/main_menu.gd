@@ -2,9 +2,9 @@ extends Control
 
 func _ready() -> void:
 	if !FileAccess.file_exists(global.PATH):
-		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = true
+		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = true
 	else:
-		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = false
+		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = false
 	$PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer._ready()
 
 func _on_button_start_pressed() -> void:
