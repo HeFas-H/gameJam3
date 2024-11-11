@@ -25,6 +25,10 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("console"):
 		visible = !visible
 		position = Vector2(-570,-420)
+	if Input.is_action_just_pressed("enter"):
+		if line.has_focus():
+			line.focus_mode = 0
+			line.focus_mode = 1
 
 func _parse():
 	split_command = command.split(" ")

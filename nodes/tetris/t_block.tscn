@@ -18,7 +18,7 @@ size = Vector2(28.1516, 90.7958)
 [node name="TBlock" type="CharacterBody2D"]
 position = Vector2(32, 48)
 disable_mode = 1
-collision_layer = 33
+collision_layer = 97
 collision_mask = 32
 floor_constant_speed = true
 script = ExtResource("1_e78xx")

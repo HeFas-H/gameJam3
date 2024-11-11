@@ -62,6 +62,5 @@ func shoot():
 func _on_shoot_delay_timeout() -> void:
 	shoot()
 
-
 func _on_animated_sprite_2d_2_animation_finished() -> void:
 	anim_error.hide()
