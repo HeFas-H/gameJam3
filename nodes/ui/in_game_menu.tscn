@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3kh52d1fxira"]
+[gd_scene load_steps=8 format=3 uid="uid://c3kh52d1fxira"]
 
 [ext_resource type="Script" path="res://scripts/in_game_menu.gd" id="1_im52r"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="2_8j4c4"]
 [ext_resource type="Texture2D" uid="uid://b85hhbhfnbeca" path="res://assets/continue_btn.png" id="2_aag13"]
 [ext_resource type="Texture2D" uid="uid://b7o2iemg2b3hl" path="res://assets/quie_btn.png" id="3_oj1ts"]
 [ext_resource type="Texture2D" uid="uid://crbg0ce5ip03d" path="res://assets/settings_btn.png" id="4_54ixc"]
+[ext_resource type="Texture2D" uid="uid://dnwkf5f5k3533" path="res://assets/audio_icon.png" id="6_56fck"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ywbj6"]
 font_size = 20
@@ -68,11 +69,11 @@ texture = ExtResource("4_54ixc")
 
 [node name="PanelContainer" type="PanelContainer" parent="SettingsBtn"]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -52.0
-offset_top = -32.0
-offset_right = 83.0
-offset_bottom = 16.0
-scale = Vector2(0.719627, 0.799726)
+offset_left = -31.0
+offset_top = -29.0
+offset_right = 104.0
+offset_bottom = 19.0
+scale = Vector2(0.597307, 0.695511)
 size_flags_horizontal = 3
 script = ExtResource("2_8j4c4")
 
@@ -89,6 +90,11 @@ label_settings = SubResource("LabelSettings_ywbj6")
 layout_mode = 2
 max_value = 1.0
 step = 0.05
+
+[node name="AudioIcon" type="Sprite2D" parent="SettingsBtn"]
+position = Vector2(-43, -12)
+scale = Vector2(1.46703, 1.43125)
+texture = ExtResource("6_56fck")
 
 [connection signal="mouse_entered" from="ContinueBtn/Button" to="." method="_on_continue_m_entered"]
 [connection signal="mouse_exited" from="ContinueBtn/Button" to="." method="_on_continue_m_exited"]
