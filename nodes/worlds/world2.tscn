@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ysaahhb6hvtv"]
+[gd_scene load_steps=12 format=3 uid="uid://ysaahhb6hvtv"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_dfwv6"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_j8ke4"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="4_mc7b3"]
 [ext_resource type="PackedScene" uid="uid://c3gx0ksbmjgwt" path="res://nodes/error_app.tscn" id="5_ncun3"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="6_bxw6l"]
+[ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="7_032x2"]
+[ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="8_k01s1"]
+[ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="9_sq77s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
@@ -34,9 +37,47 @@ offset_top = -425.0
 offset_right = -577.0
 offset_bottom = -425.0
 
+[node name="Error_app2" parent="Camera2D" instance=ExtResource("5_ncun3")]
+position = Vector2(172, -237)
+rotation = -2.79253
+metadata/repeat = 1
+
+[node name="Error_app3" parent="Camera2D" instance=ExtResource("5_ncun3")]
+position = Vector2(-338, -59)
+rotation = -3.30042
+metadata/repeat = 1
+
 [node name="Error_app" parent="Camera2D" instance=ExtResource("5_ncun3")]
-position = Vector2(187, 90)
-metadata/repeat = 4
+position = Vector2(-198, 289)
+rotation = -0.0942478
+
+[node name="JumpNotepad3" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(347, 69)
+metadata/Velocity = Vector2(1000, -1000)
+
+[node name="JumpNotepad4" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(513, -224)
+metadata/Velocity = Vector2(1000, -1000)
+
+[node name="JumpNotepad2" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(232, 206)
+metadata/Velocity = Vector2(1000, -1000)
+
+[node name="JumpNotepad7" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(65, -253)
+metadata/Velocity = Vector2(-600, 300)
+
+[node name="JumpNotepad6" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(-163, -298)
+metadata/Velocity = Vector2(-600, 100)
+
+[node name="JumpNotepad5" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(-404, -182)
+metadata/Velocity = Vector2(-600, 400)
+
+[node name="JumpNotepad" parent="Camera2D" instance=ExtResource("8_k01s1")]
+position = Vector2(-63, -191)
+metadata/Velocity = Vector2(1000, -1000)
 
 [node name="Walls" type="Node2D" parent="."]
 
@@ -65,7 +106,7 @@ shape = SubResource("RectangleShape2D_t6atf")
 position = Vector2(0, 344)
 
 [node name="player" parent="." instance=ExtResource("6_bxw6l")]
-position = Vector2(-367, -71)
+position = Vector2(479, -385)
 
 [node name="Panel" type="Panel" parent="."]
 modulate = Color(0.846982, 0.919255, 0.976129, 1)
@@ -76,6 +117,67 @@ offset_right = 580.0
 offset_bottom = 436.0
 
 [node name="Other" type="Node2D" parent="."]
+
+[node name="FolderIcon" parent="Other" instance=ExtResource("7_032x2")]
+position = Vector2(524, -383)
+
+[node name="FileObstacle2" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(125, 264)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle3" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(384, -22)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle4" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(313, 163)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle13" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(455, -299)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle5" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(513, -303)
+
+[node name="FileObstacle6" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(-437, 320)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle7" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(57, 102)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle8" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(-110, -48)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle9" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(289, -260)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle10" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(238, -261)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle11" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(-165, -46)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle12" parent="Other" instance=ExtResource("9_sq77s")]
+position = Vector2(-235, -46)
+metadata/can_disappear = true
+metadata/can_reload = true
 
 [node name="Audio" type="Node2D" parent="."]
 
