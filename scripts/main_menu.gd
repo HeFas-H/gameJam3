@@ -1,10 +1,6 @@
 extends Control
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	global.Save()
-	global.Load()
 	if !global.is_loaded:
 		$PanelContainer/VBoxContainer/HBoxContainer2/Button.disabled = true
 	else:
