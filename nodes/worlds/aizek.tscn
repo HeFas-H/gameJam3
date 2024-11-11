@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c35cpb5x0acfp" path="res://nodes/aizek/player_aizek.tscn" id="3_ho6iu"]
 [ext_resource type="Texture2D" uid="uid://0veq75b1e4m" path="res://assets/windows.png" id="4_3f6td"]
 [ext_resource type="PackedScene" uid="uid://dg1wu2u8myhq8" path="res://nodes/aizek/error_spears.tscn" id="7_80o74"]
+[ext_resource type="Texture2D" uid="uid://bnn7a1xewgklu" path="res://assets/shadow.png" id="7_h6pgk"]
 [ext_resource type="PackedScene" uid="uid://skww207sc1yx" path="res://nodes/aizek/spawner.tscn" id="7_n57ly"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="8_0kvlc"]
 [ext_resource type="Texture2D" uid="uid://d1hhtp3ykt3d3" path="res://assets/aizek.png" id="11_jt6au"]
 [ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="12_mvpxu"]
-[ext_resource type="PackedScene" uid="uid://dsknmw6aeo3y2" path="res://nodes/aizek/mibik.tscn" id="13_nk2g4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjilr"]
 texture = ExtResource("2_ha73f")
@@ -99,8 +99,12 @@ scale = Vector2(2.42701, 2.42701)
 tile_map_data = PackedByteArray("AAD7//3/AwABAAIAAAD7//7/AwABAAIAAAD7////AwABAAIAAAD7/wAAAwACAAEAAAD7/wEAAwACAAMAAAD7/wIAAwABAAIAAAD7/wMAAwABAAEAAAD8//3/AwACAAEAAAD8//7/AwACAAEAAAD8////AwABAAIAAAD8/wAAAwACAAIAAAD8/wEAAwABAAIAAAD8/wIAAwACAAMAAAD8/wMAAwABAAIAAAD9//3/AwACAAIAAAD9//7/AwABAAEAAAD9////AwACAAIAAAD9/wAAAwABAAEAAAD9/wEAAwACAAMAAAD9/wIAAwACAAMAAAD9/wMAAwACAAMAAAD+//3/AwABAAEAAAD+//7/AwABAAEAAAD+////AwABAAEAAAD+/wAAAwABAAMAAAD+/wEAAwABAAEAAAD+/wIAAwACAAMAAAD+/wMAAwACAAEAAAD///3/AwACAAMAAAD///7/AwABAAEAAAD/////AwACAAEAAAD//wAAAwACAAEAAAD//wEAAwACAAEAAAD//wIAAwACAAIAAAD//wMAAwABAAIAAAAAAP3/AwACAAEAAAAAAP7/AwACAAIAAAAAAP//AwABAAIAAAAAAAAAAwACAAMAAAAAAAEAAwACAAIAAAAAAAIAAwACAAIAAAAAAAMAAwACAAIAAAABAP3/AwABAAIAAAABAP7/AwACAAMAAAABAP//AwABAAEAAAABAAAAAwACAAEAAAABAAEAAwACAAMAAAABAAIAAwABAAIAAAABAAMAAwABAAMAAAACAP3/AwACAAMAAAACAP7/AwACAAMAAAACAP//AwABAAEAAAACAAAAAwABAAEAAAACAAEAAwACAAEAAAACAAIAAwACAAMAAAACAAMAAwABAAEAAAADAP3/AwABAAIAAAADAP7/AwABAAMAAAADAP//AwACAAEAAAADAAAAAwABAAEAAAADAAEAAwACAAIAAAADAAIAAwACAAEAAAADAAMAAwABAAEAAAAEAP3/AwACAAEAAAAEAP7/AwACAAIAAAAEAP//AwACAAMAAAAEAAAAAwABAAIAAAAEAAEAAwACAAMAAAAEAAIAAwABAAEAAAAEAAMAAwACAAEAAAAFAP3/AwACAAMAAAAFAP7/AwACAAEAAAAFAP//AwACAAMAAAAFAAAAAwABAAEAAAAFAAEAAwABAAEAAAAFAAIAAwACAAIAAAAFAAMAAwABAAEAAAD7//z/AwABAAAAAAD8//z/AwABAAAAAAD9//z/AwABAAAAAAD+//z/AwABAAAAAAD///z/AwABAAAAAAAAAPz/AwABAAAAAAABAPz/AwABAAAAAAACAPz/AwABAAAAAAADAPz/AwABAAAAAAAEAPz/AwABAAAAAAAFAPz/AwABAAAAAAAGAP3/AwADAAEAAAAGAP7/AwADAAEAAAAGAP//AwADAAEAAAAGAAAAAwADAAEAAAAGAAEAAwADAAIAAAAGAAIAAwADAAEAAAAGAAMAAwADAAEAAAD7/wQAAwACAAQAAAD8/wQAAwACAAQAAAD9/wQAAwACAAQAAAD+/wQAAwACAAQAAAD//wQAAwACAAQAAAAAAAQAAwACAAQAAAABAAQAAwACAAQAAAACAAQAAwACAAQAAAADAAQAAwACAAQAAAAEAAQAAwACAAQAAAAFAAQAAwACAAQAAAD6//3/AwAAAAMAAAD6//7/AwAAAAMAAAD6////AwAAAAMAAAD6/wAAAwAAAAMAAAD6/wEAAwAAAAIAAAD6/wIAAwAAAAMAAAD6/wMAAwAAAAMAAAD6//z/AwAAAAAAAAAGAPz/AwADAAAAAAAGAAQAAwADAAQAAAD6/wQAAwAAAAQAAAA=")
 tile_set = SubResource("TileSet_y5mxi")
 
-[node name="Mibik" parent="." instance=ExtResource("13_nk2g4")]
-position = Vector2(-1, -244)
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.756863)
+position = Vector2(-1, -193)
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("7_h6pgk")
 
 [node name="player" parent="." instance=ExtResource("3_ho6iu")]
 position = Vector2(137, 27)
@@ -112,7 +116,6 @@ stream = ExtResource("8_0kvlc")
 autoplay = true
 
 [node name="Objects" type="Node2D" parent="."]
-process_mode = 4
 
 [node name="Error" parent="Objects" instance=ExtResource("7_80o74")]
 
@@ -180,5 +183,9 @@ wait_time = 30.0
 one_shot = true
 autostart = true
 
+[node name="Cutscene" type="Timer" parent="."]
+wait_time = 0.08
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Cutscene" to="." method="_on_cutscene_timeout"]

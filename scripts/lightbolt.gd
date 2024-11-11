@@ -10,6 +10,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node2D) -> void:
+	print("er")
 	if body.get_class() == "CharacterBody2D":
 		body.TakeDamage(damage)
 	queue_free()

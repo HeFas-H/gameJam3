@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = (player.position - position).normalized()
 	var motion = direction * SPEED * delta
-	if position.distance_squared_to(player.position) > 10000:
+	if position.distance_squared_to(player.position) > 4000:
 		position += motion
 		state = 1
 	else:

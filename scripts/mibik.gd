@@ -1,7 +1,8 @@
 extends StaticBody2D
 
-var health = 500
+var health = 250
 var damage = 10
+var speed = 200
 
 @onready var flash = preload("res://nodes/aizek/boss_projectile.tscn")
 @onready var player = get_tree().get_nodes_in_group("player")[0]
@@ -38,8 +39,14 @@ enum status {
 	attack = 1,
 }
 
+var deltatime = 16
+var pos = Vector2(0,0)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
+	if self.global_position != pos:
+		global_position = Vector2(move_toward(self.global_position.x, self.pos.x, deltatime), move_toward(self.global_position.y, self.pos.y, deltatime))
+
 	match state:
 		0:
 			anim.play("idle")
@@ -47,10 +54,9 @@ func _process(delta: float) -> void:
 			anim.play("attack")
 		_:
 			anim.play("idle")
-	if health < 250 and $Timer.wait_time < 0.8:
-		anim.speed_scale = 2
-		
-
+	if health < 150:
+		speed = 400
+			
 func _on_timer_timeout() -> void:
 	state = 1
 
@@ -63,5 +69,5 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		get_tree().root.add_child(lightbolt)
 		lightbolt.damage = damage
 		lightbolt.global_position = global_position + Vector2(-50, 0)
-		lightbolt.phys.linear_velocity = lightbolt.global_position.direction_to(player.global_position)*200
+		lightbolt.phys.linear_velocity = lightbolt.global_position.direction_to(player.global_position)*speed
 		lightbolt.look_at(player.global_position)
