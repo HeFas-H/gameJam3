@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1qv3d5at02ak"]
+
+[ext_resource type="Script" path="res://scripts/aizek_icon.gd" id="1_lrq4k"]
+[ext_resource type="Texture2D" uid="uid://d1hhtp3ykt3d3" path="res://assets/aizek.png" id="2_6t3wx"]
+[ext_resource type="Texture2D" uid="uid://cdeix608x3gmc" path="res://assets/icon_lock.png" id="3_jihkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cko0m"]
+size = Vector2(32, 32)
+
+[node name="AizekIcon" type="StaticBody2D"]
+collision_layer = 17
+script = ExtResource("1_lrq4k")
+metadata/coms = ["destroy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cko0m")
+
+[node name="IconTetris" type="Sprite2D" parent="."]
+texture = ExtResource("2_6t3wx")
+
+[node name="IconLock" type="Sprite2D" parent="."]
+position = Vector2(12, 10)
+scale = Vector2(2.48214, 2.48214)
+texture = ExtResource("3_jihkb")

@@ -5,6 +5,10 @@ var pos = Vector2(0,0)
 var deltatime = 8
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Ghost.global_rotation = 0
+	$Ghost.global_position = global_position + Vector2(-12,15)
+	if !get_meta("can_disappear"):
+		$Ghost.queue_free()
 	pos = pos + global_position
 	anim.frame = randi_range(0,2)
 	anim.global_rotation = 0

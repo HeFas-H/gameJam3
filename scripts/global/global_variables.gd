@@ -11,7 +11,7 @@ func Save():
 	var file = FileAccess.open(PATH, FileAccess.WRITE)
 	file.store_64(cur_level)
 	file.store_double(volume_scale)
-	file.store_csv_line(self.commands)
+	file.store_csv_line(commands)
 	file.close()
 
 var levels = [

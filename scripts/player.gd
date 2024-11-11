@@ -21,7 +21,8 @@ enum status {
 
 @onready var anim_error = $AnimatedSprite2D2
 
-func  _ready() -> void:
+func _ready() -> void:
+	$AnimatedSprite2D2/AudioStreamPlayer.volume_db = linear_to_db(global.volume_scale)
 	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
 	anim_error.show()
 	anim_error.play("default")

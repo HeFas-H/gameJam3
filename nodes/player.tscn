@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bjwtshs5siyc0"]
+[gd_scene load_steps=23 format=3 uid="uid://bjwtshs5siyc0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nwwcj"]
 [ext_resource type="Texture2D" uid="uid://3haarbpyde6a" path="res://assets/player_walk_set.png" id="2_hii87"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bbv704be7hxh4" path="res://assets/errors/matrix_error_2.png" id="5_onrsk"]
 [ext_resource type="Texture2D" uid="uid://3mhjew1bqgsk" path="res://assets/errors/matrix_error_3.png" id="6_di4aq"]
 [ext_resource type="Texture2D" uid="uid://d2jylefbq4y0q" path="res://assets/errors/matrix_error_4.png" id="7_np5js"]
+[ext_resource type="AudioStream" uid="uid://nddy4ptom16o" path="res://assets/sound/noise.mp3" id="8_rurak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h8sjc"]
 atlas = ExtResource("2_hii87")
@@ -138,6 +139,7 @@ animations = [{
 scale = Vector2(1.2113, 1.2113)
 collision_layer = 3
 collision_mask = 3
+floor_max_angle = 1.0472
 script = ExtResource("1_nwwcj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -146,7 +148,6 @@ animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.65112)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_bxb7g")
 
 [node name="ConsoleZone" type="Area2D" parent="."]
@@ -174,6 +175,10 @@ top_level = true
 sprite_frames = SubResource("SpriteFrames_odb5k")
 frame_progress = 0.470403
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite2D2"]
+stream = ExtResource("8_rurak")
+autoplay = true
+
 [node name="Select" type="Node2D" parent="."]
 visible = false
 top_level = true
@@ -188,6 +193,7 @@ offset_bottom = 21.0
 color = Color(0, 1, 1, 0.47451)
 
 [node name="ColorRect" type="ColorRect" parent="Select/ColorRect"]
+layout_mode = 0
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 38.0

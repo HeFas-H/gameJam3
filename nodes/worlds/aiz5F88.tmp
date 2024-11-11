@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="2_1h45t"]
 [ext_resource type="Texture2D" uid="uid://crk6omujek3jx" path="res://assets/aizek_tilemap.png" id="2_ha73f"]
 [ext_resource type="PackedScene" uid="uid://c35cpb5x0acfp" path="res://nodes/aizek/player_aizek.tscn" id="3_ho6iu"]
+[ext_resource type="PackedScene" uid="uid://3tb40y85bfun" path="res://nodes/aizek/enemy.tscn" id="6_g75eq"]
 [ext_resource type="PackedScene" uid="uid://dg1wu2u8myhq8" path="res://nodes/aizek/error_spears.tscn" id="7_80o74"]
-[ext_resource type="PackedScene" uid="uid://skww207sc1yx" path="res://nodes/aizek/spawner.tscn" id="7_n57ly"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjilr"]
 texture = ExtResource("2_ha73f")
@@ -81,6 +81,9 @@ position = Vector2(137, 27)
 
 [node name="Audio" type="Node2D" parent="."]
 
+[node name="Enemy" parent="." instance=ExtResource("6_g75eq")]
+position = Vector2(-237, 1)
+
 [node name="Objects" type="Node2D" parent="."]
 
 [node name="Error" parent="Objects" instance=ExtResource("7_80o74")]
@@ -90,10 +93,5 @@ position = Vector2(74, 225)
 
 [node name="Error3" parent="Objects" instance=ExtResource("7_80o74")]
 position = Vector2(228, -161)
-
-[node name="Spawner" parent="Objects" instance=ExtResource("7_n57ly")]
-
-[node name="Spawner2" parent="Objects" instance=ExtResource("7_n57ly")]
-position = Vector2(385, 71)
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]

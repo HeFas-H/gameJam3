@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://dg1wu2u8myhq8"]
+
+[ext_resource type="Script" path="res://scripts/error.gd" id="1_yagr1"]
+[ext_resource type="Texture2D" uid="uid://c5ievbo1crdtp" path="res://assets/errors/er3.png" id="2_04asv"]
+[ext_resource type="Texture2D" uid="uid://dqn00bnufogfm" path="res://assets/errors/er1.png" id="3_d5srv"]
+[ext_resource type="Texture2D" uid="uid://bheadh176qwlb" path="res://assets/errors/er4.png" id="4_5haq0"]
+[ext_resource type="Texture2D" uid="uid://drldctu1n48tp" path="res://assets/errors/er2.png" id="5_yqtc6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex3xc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_04asv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d5srv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5haq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yqtc6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvnxt"]
+size = Vector2(141.644, 149.753)
+
+[node name="Error" type="Node2D"]
+position = Vector2(-161, -7)
+scale = Vector2(0.462428, 0.462428)
+script = ExtResource("1_yagr1")
+
+[node name="Anims" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anims"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ex3xc")
+frame_progress = 0.461255
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Anims"]
+rotation = 1.5708
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_ex3xc")
+frame = 3
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.16252, -2.1625)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pvnxt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

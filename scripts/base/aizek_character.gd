@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name entity_aizek
 
 var health = 100
+var damage = 10
 
 func TakeDamage( dmg ):
 	health = health - dmg

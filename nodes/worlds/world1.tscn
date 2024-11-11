@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ulpv8dnjf13o"]
+[gd_scene load_steps=15 format=3 uid="uid://ulpv8dnjf13o"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_6txqd"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_8g3bn"]
@@ -8,9 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="3_j3i7l"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_ex34j"]
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_b57it"]
+[ext_resource type="Texture2D" uid="uid://0veq75b1e4m" path="res://assets/windows.png" id="5_qvlse"]
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="6_oqutb"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="7_2oaju"]
 [ext_resource type="PackedScene" uid="uid://cv1wmx4fko4yb" path="res://nodes/folder_icon.tscn" id="9_ma76m"]
+[ext_resource type="PackedScene" uid="uid://dr5is2q1t4cs6" path="res://nodes/tetris/anti_virus_decor.tscn" id="12_cq66p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t6atf"]
 size = Vector2(1152.38, 16)
@@ -23,15 +25,29 @@ script = ExtResource("1_8g3bn")
 [node name="Background" type="Sprite2D" parent="Camera2D"]
 texture = ExtResource("1_6txqd")
 
-[node name="Trash" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-524, -378)
-texture = ExtResource("2_chj6x")
-
 [node name="InGameMenu" parent="Camera2D" instance=ExtResource("3_j3i7l")]
 offset_left = -577.0
 offset_top = -432.0
 offset_right = -577.0
 offset_bottom = -432.0
+
+[node name="Panel" type="Panel" parent="Camera2D"]
+modulate = Color(0.846982, 0.919255, 0.976129, 1)
+self_modulate = Color(0, 0.843137, 1, 1)
+offset_left = -577.0
+offset_top = 379.0
+offset_right = 580.0
+offset_bottom = 436.0
+
+[node name="Trash2" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.431373, 1, 1, 1)
+position = Vector2(-487, 406)
+texture = ExtResource("2_chj6x")
+
+[node name="Windows" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-541, 407)
+scale = Vector2(2.46508, 2.46508)
+texture = ExtResource("5_qvlse")
 
 [node name="Other" type="Node2D" parent="."]
 
@@ -133,16 +149,14 @@ floor_block_on_wall = false
 position = Vector2(-70, -535)
 metadata/Velocity = Vector2(-4000, 500)
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color(0.846982, 0.919255, 0.976129, 1)
-self_modulate = Color(0, 0.843137, 1, 1)
-offset_left = -577.0
-offset_top = 379.0
-offset_right = 580.0
-offset_bottom = 436.0
+[node name="Platform3" parent="Objects" instance=ExtResource("12_cq66p")]
+position = Vector2(-212, -723)
+metadata/point_1 = Vector2(0, 0)
+metadata/point_2 = Vector2(0, 0)
 
 [node name="player" parent="." instance=ExtResource("7_2oaju")]
 position = Vector2(-525, 336)
+scale = Vector2(1.2113, 1.2113)
 
 [node name="Audio" type="Node2D" parent="."]
 

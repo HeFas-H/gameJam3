@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=15 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_q5mad"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_hjclm"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_5l5e1"]
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_d3rgn"]
+[ext_resource type="Texture2D" uid="uid://0veq75b1e4m" path="res://assets/windows.png" id="5_q1wuj"]
 [ext_resource type="PackedScene" uid="uid://bjwtshs5siyc0" path="res://nodes/player.tscn" id="6_fdnoq"]
 [ext_resource type="PackedScene" uid="uid://c18qx7a6frjh1" path="res://nodes/minesweeper_icon.tscn" id="7_ggrp4"]
 [ext_resource type="PackedScene" uid="uid://bvqu7ibt3eetk" path="res://nodes/file_obstacle.tscn" id="8_5udh3"]
@@ -32,15 +33,21 @@ offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
 
-[node name="Trash" type="Sprite2D" parent="Camera2D"]
-position = Vector2(-524, -378)
-texture = ExtResource("2_rvngs")
-
 [node name="InGameMenu" parent="Camera2D" instance=ExtResource("3_8q5dc")]
 offset_left = -576.0
 offset_top = -432.0
 offset_right = -576.0
 offset_bottom = -432.0
+
+[node name="Trash2" type="Sprite2D" parent="Camera2D"]
+modulate = Color(0.431373, 1, 1, 1)
+position = Vector2(-487, 406)
+texture = ExtResource("2_rvngs")
+
+[node name="Windows" type="Sprite2D" parent="Camera2D"]
+position = Vector2(-541, 407)
+scale = Vector2(2.46508, 2.46508)
+texture = ExtResource("5_q1wuj")
 
 [node name="Other" type="Node2D" parent="."]
 
@@ -50,31 +57,26 @@ metadata/size = 3
 
 [node name="FileObstacle" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-520, 138)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle2" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-520, 53)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle3" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-519, -36)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle4" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-519, -121)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle5" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-451, -119)
-metadata/can_disappear = true
-metadata/can_reload = true
 
 [node name="FileObstacle6" parent="Other" instance=ExtResource("8_5udh3")]
 position = Vector2(-451, -204)
+metadata/can_disappear = true
+metadata/can_reload = true
+
+[node name="FileObstacle7" parent="Other" instance=ExtResource("8_5udh3")]
+position = Vector2(322, 342)
 metadata/can_disappear = true
 metadata/can_reload = true
 
@@ -138,7 +140,7 @@ metadata/is_locked = false
 
 [node name="player" parent="." instance=ExtResource("6_fdnoq")]
 position = Vector2(-47, 335)
-collision_mask = 3
+scale = Vector2(1.2113, 1.2113)
 
 [node name="Audio" type="Node2D" parent="."]
 

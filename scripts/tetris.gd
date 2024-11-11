@@ -57,6 +57,7 @@ func _on_timer_timeout() -> void:
 
 func _on_victory_entered(body: Node2D) -> void:
 	global.commands.append("gravity")
+	global.cur_level = 4
 	get_tree().change_scene_to_file("res://nodes/worlds/world2.tscn")
 
 func _on_delay_timeout() -> void:
