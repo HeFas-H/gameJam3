@@ -2,7 +2,6 @@ extends entity_aizek
 
 const SPEED = 200.0
 
-@onready var anim = $AnimatedSprite2D
 #@onready var console = $Console
 
 #@onready var projectile = preload("res://nodes/aizek/bullet.tscn")
@@ -18,7 +17,8 @@ enum status {
 
 var is_attacking = false
 
-func _ready() -> void:
+func _deploy() -> void:
+	anim = $AnimatedSprite2D
 	health = 25
 
 func _physics_process(delta: float) -> void:

@@ -2,7 +2,6 @@ extends entity_aizek
 
 const SPEED = 300.0
 
-@onready var anim = $AnimatedSprite2D
 #@onready var console = $Console
 
 @onready var projectile = preload("res://nodes/aizek/bullet.tscn")
@@ -17,7 +16,8 @@ enum status {
 
 var last_dir = Vector2(0,1)
 
-func _ready() -> void:
+func _deploy() -> void:
+	anim = $AnimatedSprite2D
 	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
 	anim_error.show()
 	anim_error.play("default")

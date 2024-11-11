@@ -1,12 +1,12 @@
-extends Control
+extends Node2D
 
 func _ready() -> void:
 	if !FileAccess.file_exists(global.PATH):
-		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = true
+		$ContinueBtn/Button.disabled = true
 	else:
-		$PanelContainer/VBoxContainer/HBoxContainer3/Button.disabled = false
+		$ContinueBtn/Button.disabled = false
 		global.Load()
-	$PanelContainer/VBoxContainer/HBoxContainer2/HBoxContainer2/PanelContainer._ready()
+	$SettingsBtn/PanelContainer._ready()
 
 func _on_button_start_pressed() -> void:
 	global.commands = ["use", "help", "clear"]
@@ -19,3 +19,26 @@ func _on_button_continue_pressed() -> void:
 func _on_button_exit_pressed() -> void:
 	global.Save()
 	get_tree().quit()
+
+
+func _on_continue_m_entered() -> void:
+	$ContinueBtn.self_modulate = Color(1,1,1,0.7)
+
+
+func _on_newgame_m_entered() -> void:
+	$NewGameBtn.self_modulate = Color(1,1,1,0.7)
+
+
+func _on_quite_m_entered() -> void:
+	$QuiteBtn.self_modulate = Color(1,1,1,0.7)
+
+
+
+func _on_continue_m_exited() -> void:
+	$ContinueBtn.self_modulate = Color(1,1,1,1)
+
+func _on_newgame_m_exited() -> void:
+	$NewGameBtn.self_modulate = Color(1,1,1,1)
+
+func _on_quite_m_exited() -> void:
+	$QuiteBtn.self_modulate = Color(1,1,1,1)

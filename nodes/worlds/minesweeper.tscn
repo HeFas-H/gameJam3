@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://duktmkh43q26s"]
+[gd_scene load_steps=16 format=3 uid="uid://duktmkh43q26s"]
 
 [ext_resource type="Script" path="res://scripts/minesweeper.gd" id="1_2cqnl"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_xjbmr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cps704pbefh8k" path="res://assets/errors/expl_3.png" id="6_54s0n"]
 [ext_resource type="Texture2D" uid="uid://18uj1n1fdm8i" path="res://assets/errors/expl_4.png" id="7_bwokm"]
 [ext_resource type="AudioStream" uid="uid://d3g4dah0xt88g" path="res://assets/sound/minesweeper_error.wav" id="8_ond7v"]
+[ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="12_a3ojo"]
 
 [sub_resource type="FontVariation" id="FontVariation_ub2ew"]
 
@@ -129,6 +130,10 @@ sprite_frames = SubResource("SpriteFrames_1st8f")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("8_ond7v")
+
+[node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_a3ojo")
+autoplay = true
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="VictoryDelay" to="." method="_on_delay_timeout"]

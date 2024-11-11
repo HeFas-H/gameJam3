@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var npc = preload("res://nodes/aizek/enemy.tscn")
+@onready var timer = $Timer
 
 func _on_timer_timeout() -> void:
 	var enemy = npc.instantiate()

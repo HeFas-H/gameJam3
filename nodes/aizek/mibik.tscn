@@ -1,0 +1,85 @@
+[gd_scene load_steps=17 format=3 uid="uid://dsknmw6aeo3y2"]
+
+[ext_resource type="Texture2D" uid="uid://vrr75vyrdhk1" path="res://assets/aizek/mibik (1).png" id="1_0t64m"]
+[ext_resource type="Texture2D" uid="uid://cksblp0yowc7u" path="res://assets/aizek/mibik (2).png" id="2_iwksj"]
+[ext_resource type="Texture2D" uid="uid://bavyd2jn4gqog" path="res://assets/aizek/mibik (3).png" id="3_5mbdy"]
+[ext_resource type="Texture2D" uid="uid://exiny6aqwflv" path="res://assets/aizek/mibik (4).png" id="4_hnmx5"]
+[ext_resource type="Texture2D" uid="uid://di7vx6gt2xeqw" path="res://assets/aizek/mibik (5).png" id="5_5afwu"]
+[ext_resource type="Texture2D" uid="uid://cpl1adehrhy6f" path="res://assets/aizek/mibik (6).png" id="6_46qaf"]
+[ext_resource type="Texture2D" uid="uid://c0sn0fwyb47no" path="res://assets/aizek/mibik (7).png" id="7_frfro"]
+[ext_resource type="Texture2D" uid="uid://cus6j1bptspal" path="res://assets/aizek/mibik (8).png" id="8_3a3qm"]
+[ext_resource type="Texture2D" uid="uid://cc78bhtsncbb" path="res://assets/aizek/mibik (9).png" id="9_vwibs"]
+[ext_resource type="Texture2D" uid="uid://b04o660v2g2tb" path="res://assets/aizek/mibik (10).png" id="10_xb88l"]
+[ext_resource type="Texture2D" uid="uid://0k5uat60dtjo" path="res://assets/aizek/mibik (11).png" id="11_ad85h"]
+[ext_resource type="Texture2D" uid="uid://ts66m4duk8nx" path="res://assets/aizek/mibik (12).png" id="12_xyjfx"]
+[ext_resource type="Texture2D" uid="uid://c5alcqspkk2nx" path="res://assets/aizek/mibik (13).png" id="13_sa8rg"]
+[ext_resource type="Texture2D" uid="uid://brnagcp3glp7l" path="res://assets/aizek/mibik (14).png" id="14_5qqfj"]
+[ext_resource type="Texture2D" uid="uid://bvpl2asyr6xpy" path="res://assets/aizek/mibik (15).png" id="15_nehrw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp3tl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0t64m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iwksj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mbdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hnmx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5afwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_46qaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_frfro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3a3qm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vwibs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xb88l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ad85h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xyjfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_sa8rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5qqfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nehrw")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0t64m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Mibik" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wp3tl")
+animation = &"attack"
+frame_progress = 0.0978166

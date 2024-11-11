@@ -1,17 +1,18 @@
-[gd_scene load_steps=23 format=3 uid="uid://bjwtshs5siyc0"]
+[gd_scene load_steps=28 format=3 uid="uid://bjwtshs5siyc0"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_nwwcj"]
 [ext_resource type="Texture2D" uid="uid://3haarbpyde6a" path="res://assets/player_walk_set.png" id="2_hii87"]
+[ext_resource type="Texture2D" uid="uid://dfdnmbv7iu1j" path="res://assets/fly2.png" id="2_nrnu1"]
 [ext_resource type="PackedScene" uid="uid://bgob3k0tk53pk" path="res://nodes/ui/console.tscn" id="3_n6pc3"]
+[ext_resource type="Texture2D" uid="uid://bi5u6vdoeuna2" path="res://assets/fly3.png" id="4_a0fnw"]
 [ext_resource type="Texture2D" uid="uid://c7fy4srj6cw4f" path="res://assets/errors/matrix_error_1.png" id="4_ug1g2"]
 [ext_resource type="Texture2D" uid="uid://bbv704be7hxh4" path="res://assets/errors/matrix_error_2.png" id="5_onrsk"]
 [ext_resource type="Texture2D" uid="uid://3mhjew1bqgsk" path="res://assets/errors/matrix_error_3.png" id="6_di4aq"]
+[ext_resource type="Texture2D" uid="uid://bcpmmg15oy3mb" path="res://assets/jump2.png" id="6_tcxb8"]
+[ext_resource type="Texture2D" uid="uid://bdl1qx6ktfpwb" path="res://assets/jump3.png" id="7_dt41v"]
 [ext_resource type="Texture2D" uid="uid://d2jylefbq4y0q" path="res://assets/errors/matrix_error_4.png" id="7_np5js"]
+[ext_resource type="Texture2D" uid="uid://dqynpesko5cfv" path="res://assets/jump_1.png" id="8_3tp0s"]
 [ext_resource type="AudioStream" uid="uid://nddy4ptom16o" path="res://assets/sound/noise.mp3" id="8_rurak"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8sjc"]
-atlas = ExtResource("2_hii87")
-region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8cmqc"]
 atlas = ExtResource("2_hii87")
@@ -49,11 +50,18 @@ region = Rect2(256, 0, 64, 64)
 atlas = ExtResource("2_hii87")
 region = Rect2(320, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8sjc"]
+atlas = ExtResource("2_hii87")
+region = Rect2(0, 0, 64, 64)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oou0k"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h8sjc")
+"texture": ExtResource("2_nrnu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_a0fnw")
 }],
 "loop": false,
 "name": &"fly",
@@ -78,7 +86,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h8sjc")
+"texture": ExtResource("6_tcxb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dt41v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3tp0s")
 }],
 "loop": false,
 "name": &"jump",
