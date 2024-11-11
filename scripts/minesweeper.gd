@@ -88,7 +88,7 @@ func _check( id ):
 
 @onready var EXPLOSION_SPRITE = $EXPL_SPRITE
 func EXPLOSION():
-	$AudioStreamPlayer2D.play()
+	$Audio/AudioStreamPlayer.play()
 	EXPLOSION_SPRITE.global_position = get_global_mouse_position()
 	EXPLOSION_SPRITE.scale = Vector2(0.1,0.1)
 	EXPLOSION_SPRITE.show()

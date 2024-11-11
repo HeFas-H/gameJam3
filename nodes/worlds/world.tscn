@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dq6pxu8j0823y"]
+[gd_scene load_steps=13 format=3 uid="uid://dq6pxu8j0823y"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_jpeim"]
 [ext_resource type="PackedScene" uid="uid://db2u7reewuyt4" path="res://nodes/bridge.tscn" id="2_d6bjw"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_rvngs"]
+[ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="3_8q5dc"]
 [ext_resource type="PackedScene" uid="uid://ntr6u2oiw0eo" path="res://nodes/jump_notepad.tscn" id="3_hjclm"]
 [ext_resource type="PackedScene" uid="uid://dlkvowb2uuf61" path="res://nodes/platform.tscn" id="4_5l5e1"]
 [ext_resource type="PackedScene" uid="uid://chgqoh3yhvmfv" path="res://nodes/tetris_icon.tscn" id="5_d3rgn"]
@@ -32,6 +33,12 @@ offset_bottom = 436.0
 [node name="Trash" type="Sprite2D" parent="Camera2D"]
 position = Vector2(-524, -378)
 texture = ExtResource("2_rvngs")
+
+[node name="InGameMenu" parent="Camera2D" instance=ExtResource("3_8q5dc")]
+offset_left = -576.0
+offset_top = -432.0
+offset_right = -576.0
+offset_bottom = -432.0
 
 [node name="Other" type="Node2D" parent="."]
 
@@ -129,3 +136,5 @@ metadata/is_locked = false
 
 [node name="player" parent="." instance=ExtResource("6_fdnoq")]
 position = Vector2(-47, 335)
+
+[node name="Audio" type="Node2D" parent="."]

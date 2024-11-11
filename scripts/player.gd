@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var select = $Select
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -79,9 +80,12 @@ func _on_animation_finished() -> void:
 		state = 0
 
 func _on_console_trigger_entered(body: Node2D) -> void:
+	select.global_position = body.global_position
+	select.show()
 	console.console_obj.append(body)
 
 func _on_console_trigger_exited(body: Node2D) -> void:
+	select.hide()
 	console.console_obj.erase(body)
 
 func _on_dash_reload() -> void:

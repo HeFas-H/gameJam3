@@ -4,6 +4,7 @@ var commands = ["help", "clear", "use"] #gravity destroy %hack
 var gravity = Vector2(0, 980)
 
 var cur_level = 0
+var volume_scale = 0
 const PATH = "user://file1.save"
 
 func Save():

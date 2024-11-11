@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://sjaafxbsrgsa"]
+[gd_scene load_steps=20 format=3 uid="uid://sjaafxbsrgsa"]
 
 [ext_resource type="Script" path="res://scripts/tetris.gd" id="1_j08jq"]
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="2_wtr31"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="3_ae2fc"]
 [ext_resource type="Texture2D" uid="uid://dyey4220vadmr" path="res://assets/tetris/tetris.png" id="3_qi4h8"]
+[ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="4_kn5xm"]
 [ext_resource type="Texture2D" uid="uid://c3jvb2omxn1b0" path="res://assets/tetris/L-block.png" id="4_orplt"]
 [ext_resource type="Texture2D" uid="uid://c212xawx23k3u" path="res://assets/tetris/I-block.png" id="5_sbxci"]
 [ext_resource type="Texture2D" uid="uid://b8t2bduxx23m3" path="res://assets/tetris/Z-block.png" id="6_2w5an"]
@@ -95,6 +96,12 @@ offset_bottom = 436.0
 position = Vector2(-524, -378)
 texture = ExtResource("3_ae2fc")
 
+[node name="InGameMenu" parent="Camera2D" instance=ExtResource("4_kn5xm")]
+offset_left = -282.0
+offset_top = -106.0
+offset_right = -282.0
+offset_bottom = -106.0
+
 [node name="Tetris2" type="Sprite2D" parent="."]
 position = Vector2(288, 336)
 texture = ExtResource("3_qi4h8")
@@ -175,7 +182,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Victory"]
 shape = SubResource("CircleShape2D_27suf")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("10_whtyi")
 autoplay = true
 

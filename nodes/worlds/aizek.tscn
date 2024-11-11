@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=7 format=3 uid="uid://lxn83kadkp4w"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_ammje"]
+[ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="2_1h45t"]
 [ext_resource type="Texture2D" uid="uid://crk6omujek3jx" path="res://assets/aizek_tilemap.png" id="2_ha73f"]
 [ext_resource type="PackedScene" uid="uid://c35cpb5x0acfp" path="res://nodes/player_aizek.tscn" id="3_ho6iu"]
 
@@ -66,8 +67,12 @@ offset_top = 379.0
 offset_right = 580.0
 offset_bottom = 436.0
 
+[node name="InGameMenu" parent="." instance=ExtResource("2_1h45t")]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_y5mxi")
 
 [node name="player" parent="." instance=ExtResource("3_ho6iu")]
 position = Vector2(137, 27)
+
+[node name="Audio" type="Node2D" parent="."]

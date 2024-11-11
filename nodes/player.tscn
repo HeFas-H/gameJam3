@@ -179,6 +179,26 @@ top_level = true
 sprite_frames = SubResource("SpriteFrames_odb5k")
 frame_progress = 0.470403
 
+[node name="Select" type="Node2D" parent="."]
+visible = false
+top_level = true
+scale = Vector2(1.41128, 1.41128)
+
+[node name="ColorRect" type="ColorRect" parent="Select"]
+clip_children = 2
+offset_left = -20.0
+offset_top = -19.0
+offset_right = 20.0
+offset_bottom = 21.0
+color = Color(0, 1, 1, 0.47451)
+
+[node name="ColorRect" type="ColorRect" parent="Select/ColorRect"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 38.0
+offset_bottom = 38.0
+color = Color(0, 1, 1, 0.376471)
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="ConsoleZone" to="." method="_on_console_trigger_entered"]
 [connection signal="body_exited" from="ConsoleZone" to="." method="_on_console_trigger_exited"]
