@@ -172,7 +172,6 @@ stream = ExtResource("14_v3762")
 autoplay = true
 
 [node name="Tutorial" parent="." instance=ExtResource("15_07stk")]
-visible = false
 position = Vector2(-2, 0)
 metadata/tutorial = 2
 

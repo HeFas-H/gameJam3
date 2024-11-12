@@ -261,7 +261,6 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Tutorial" parent="." instance=ExtResource("20_u7mif")]
-visible = false
 metadata/tutorial = 5
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
