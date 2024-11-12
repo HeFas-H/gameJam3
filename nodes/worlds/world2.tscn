@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://ysaahhb6hvtv"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_dfwv6"]
-[ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_j8ke4"]
+[ext_resource type="Texture2D" uid="uid://b5vkxgtrvvb1r" path="res://assets/background2.png" id="2_g50nf"]
 [ext_resource type="Texture2D" uid="uid://0ll1n6t84fid" path="res://assets/trash.png" id="2_omxix"]
 [ext_resource type="Texture2D" uid="uid://dohwt3fgn5cdy" path="res://assets/errors/glass_broke.png" id="3_jo0l2"]
 [ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="4_mc7b3"]
@@ -23,7 +23,7 @@ script = ExtResource("1_dfwv6")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Background" type="Sprite2D" parent="Camera2D"]
-texture = ExtResource("1_j8ke4")
+texture = ExtResource("2_g50nf")
 
 [node name="GlassBroke" type="Sprite2D" parent="Camera2D"]
 self_modulate = Color(1, 1, 1, 0.352941)

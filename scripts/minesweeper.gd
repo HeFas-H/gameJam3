@@ -80,6 +80,8 @@ func _check( id ):
 					opened = opened + 1
 					_check(Vector2(id.x+x, id.y+y))
 				elif mines_matrix[id.x][id.y].type == 0:
+					if mines_matrix[id.x+x][id.y+y].sprite.frame == mines_matrix[id.x+x][id.y+y].type:
+						continue
 					opened = opened + 1
 					mines_matrix[id.x+x][id.y+y].sprite.frame = mines_matrix[id.x+x][id.y+y].type
 	if opened + mines == map_size.x*map_size.y:
