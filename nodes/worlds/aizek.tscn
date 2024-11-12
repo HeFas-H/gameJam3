@@ -131,9 +131,9 @@ tile_set = SubResource("TileSet_y5mxi")
 
 [node name="FinalCutscene_nodes" type="Node2D" parent="."]
 process_mode = 4
+visible = false
 
 [node name="Error_app" parent="FinalCutscene_nodes" instance=ExtResource("19_x03fu")]
-visible = true
 top_level = true
 position = Vector2(117, 33)
 metadata/repeat = 1
@@ -141,7 +141,6 @@ metadata/pos = Vector2(15, 15)
 metadata/time = 1.0
 
 [node name="Error_app2" parent="FinalCutscene_nodes" instance=ExtResource("19_x03fu")]
-visible = true
 top_level = true
 position = Vector2(-17, 176)
 metadata/repeat = 1
@@ -149,7 +148,6 @@ metadata/pos = Vector2(15, 15)
 metadata/time = 1.5
 
 [node name="Error_app3" parent="FinalCutscene_nodes" instance=ExtResource("19_x03fu")]
-visible = true
 top_level = true
 position = Vector2(263, 248)
 metadata/repeat = 1
