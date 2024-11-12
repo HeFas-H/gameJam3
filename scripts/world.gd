@@ -34,5 +34,7 @@ func _on_cutscene_2_timeout() -> void:
 	$FinalCutscene_nodes/AnimatedSprite2D.play("default")
 	$Audio.process_mode = Node.PROCESS_MODE_INHERIT
 	$Audio/MainOst.process_mode = Node.PROCESS_MODE_DISABLED
-	$"Audio/Windows-xp-shutdown".process_mode = Node.PROCESS_MODE_INHERIT
 	$Audio/SounddddddddErrror.process_mode = Node.PROCESS_MODE_INHERIT
+
+func _on_final_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://nodes/worlds/final.tscn")

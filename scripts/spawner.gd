@@ -5,5 +5,5 @@ extends Node2D
 
 func _on_timer_timeout() -> void:
 	var enemy = npc.instantiate()
-	get_tree().root.add_child(enemy)
+	get_tree().root.get_tree().root.get_node("World").add_child(enemy)
 	enemy.global_position = global_position

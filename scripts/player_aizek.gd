@@ -17,8 +17,8 @@ enum status {
 var last_dir = Vector2(0,1)
 
 func _deploy() -> void:
-	health = 100000
-	damage = 1000
+	health = 100
+	damage = 12
 	anim = $AnimatedSprite2D
 	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
 	anim_error.show()
@@ -55,7 +55,7 @@ func Die():
 
 func shoot():
 	var bullet = projectile.instantiate()
-	get_tree().root.add_child(bullet)
+	get_tree().root.get_tree().root.get_node("World").add_child(bullet)
 	bullet.damage = damage
 	bullet.global_position = global_position
 	bullet.linear_velocity = last_dir*800

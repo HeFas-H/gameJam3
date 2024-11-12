@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvefetrgguweu"]
+
+[ext_resource type="Texture2D" uid="uid://dq1wqohc3mwvk" path="res://assets/you_win.png" id="1_gr1bm"]
+[ext_resource type="Script" path="res://scripts/final.gd" id="1_puq6o"]
+[ext_resource type="PackedScene" uid="uid://c3kh52d1fxira" path="res://nodes/ui/in_game_menu.tscn" id="2_or2b2"]
+[ext_resource type="AudioStream" uid="uid://b1gjw60rtkkq7" path="res://assets/sound/windows-xp-shutdown.mp3" id="3_14b8q"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_puq6o")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="YouWin" type="Sprite2D" parent="Camera2D"]
+texture = ExtResource("1_gr1bm")
+
+[node name="InGameMenu" parent="." instance=ExtResource("2_or2b2")]
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="Windows-xp-shutdown" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_14b8q")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

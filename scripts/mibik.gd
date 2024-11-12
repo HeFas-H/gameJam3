@@ -69,7 +69,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	else:
 		state = 2
 		var lightbolt = flash.instantiate()
-		get_tree().root.add_child(lightbolt)
+		get_tree().root.get_node("World").add_child(lightbolt)
 		lightbolt.damage = damage
 		lightbolt.global_position = global_position + Vector2(-50, 0)
 		lightbolt.phys.linear_velocity = lightbolt.global_position.direction_to(player.global_position)*speed
