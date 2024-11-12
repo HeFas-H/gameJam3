@@ -4,6 +4,7 @@ extends StaticBody2D
 @onready var timer2 = $Timer2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$AudioStreamPlayer.volume_db = linear_to_db(global.volume_scale)
 	timer2.start(get_meta("time"))
 	if get_meta("repeat") <= 0:
 		timer.queue_free()

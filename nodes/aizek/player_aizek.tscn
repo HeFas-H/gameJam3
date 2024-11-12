@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c35cpb5x0acfp"]
+[gd_scene load_steps=25 format=3 uid="uid://c35cpb5x0acfp"]
 
 [ext_resource type="Script" path="res://scripts/player_aizek.gd" id="1_oqbhh"]
 [ext_resource type="Texture2D" uid="uid://3haarbpyde6a" path="res://assets/player_walk_set.png" id="2_uhg3m"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://3mhjew1bqgsk" path="res://assets/errors/matrix_error_3.png" id="5_6n81m"]
 [ext_resource type="Texture2D" uid="uid://d2jylefbq4y0q" path="res://assets/errors/matrix_error_4.png" id="6_kq4bk"]
 [ext_resource type="AudioStream" uid="uid://nddy4ptom16o" path="res://assets/sound/noise.mp3" id="7_femgl"]
+[ext_resource type="AudioStream" uid="uid://w0yfiaxobgwy" path="res://assets/sound/лошадь ржёт аахахаах.mp3" id="8_5bwwk"]
+[ext_resource type="Texture2D" uid="uid://v7r822pgadtd" path="res://assets/bar.png" id="9_sl4au"]
+[ext_resource type="Texture2D" uid="uid://cwwccfy31wk2" path="res://assets/bar2.png" id="10_v3y5l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ss8ys"]
 radius = 18.0
@@ -155,6 +158,23 @@ sprite_frames = SubResource("SpriteFrames_1yr4l")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimatedSprite2D2"]
 stream = ExtResource("7_femgl")
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_5bwwk")
+pitch_scale = 1.4
+
+[node name="Bar" type="Node2D" parent="."]
+position = Vector2(0, -31.4861)
+scale = Vector2(0.228155, 0.228155)
+
+[node name="Under" type="Sprite2D" parent="Bar"]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+texture = ExtResource("9_sl4au")
+
+[node name="Progress" type="Sprite2D" parent="Bar"]
+modulate = Color(1, 1, 1, 0.823529)
+texture = ExtResource("10_v3y5l")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finished"]
 [connection signal="body_entered" from="ConsoleZone" to="." method="_on_console_trigger_entered"]

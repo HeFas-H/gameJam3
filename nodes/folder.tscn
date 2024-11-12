@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://218e736pdu12" path="res://assets/explorer.png" id="2_edkke"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtt1q"]
-size = Vector2(690, 21)
+size = Vector2(610, 21)
 
 [node name="Folder" type="StaticBody2D"]
 show_behind_parent = true
@@ -14,10 +14,11 @@ metadata/size = 0
 
 [node name="Explorer" type="Sprite2D" parent="."]
 position = Vector2(-2, 228)
+scale = Vector2(2.10616, 2.10616)
 texture = ExtResource("2_edkke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
+position = Vector2(-2, 8.5)
 shape = SubResource("RectangleShape2D_dtt1q")
 one_way_collision = true
 

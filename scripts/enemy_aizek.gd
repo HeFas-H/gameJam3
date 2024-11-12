@@ -1,11 +1,12 @@
 extends entity_aizek
 
-const SPEED = 200.0
+const SPEED = 150.0
 
 #@onready var console = $Console
 
 #@onready var projectile = preload("res://nodes/aizek/bullet.tscn")
 @onready var player = get_tree().get_nodes_in_group("player")[0]
+@onready var health_bar = $Bar/Progress
 
 var state = 0
 
@@ -14,12 +15,17 @@ enum status {
 	walk = 1,
 	attack = 2,
 }
-
+var max_health = health
 var is_attacking = false
 
+func _damaged(dmg) -> void:
+	health_bar.scale.x = health/max_health
+
 func _deploy() -> void:
+	connect("takeDamage", Callable(self, "_damaged") )
 	anim = $AnimatedSprite2D
-	health = 25
+	health = 25.0
+	max_health = health
 
 func _physics_process(delta: float) -> void:
 	

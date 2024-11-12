@@ -156,6 +156,12 @@ position = Vector2(-212, -723)
 metadata/point_1 = Vector2(0, 0)
 metadata/point_2 = Vector2(0, 0)
 
+[node name="Bridge4" parent="Objects" instance=ExtResource("2_7pwl7")]
+position = Vector2(112, -631)
+metadata/Length = 6
+metadata/can_disappear = true
+metadata/can_reload = true
+
 [node name="player" parent="." instance=ExtResource("7_2oaju")]
 position = Vector2(-525, 336)
 
@@ -166,6 +172,7 @@ stream = ExtResource("14_v3762")
 autoplay = true
 
 [node name="Tutorial" parent="." instance=ExtResource("15_07stk")]
+visible = false
 position = Vector2(-2, 0)
 metadata/tutorial = 2
 

@@ -35,16 +35,13 @@ scale = Vector2(0.462428, 0.462428)
 script = ExtResource("1_yagr1")
 
 [node name="Anims" type="Node2D" parent="."]
-scale = Vector2(1, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Anims"]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_ex3xc")
 frame_progress = 0.461255
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Anims"]
 rotation = 1.5708
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_ex3xc")
 frame = 3
 
@@ -54,7 +51,6 @@ collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2.16252, -2.1625)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_pvnxt")
 
 [node name="Timer" type="Timer" parent="."]

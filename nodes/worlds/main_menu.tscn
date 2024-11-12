@@ -85,7 +85,7 @@ offset_right = 18.7798
 offset_bottom = -0.866409
 scale = Vector2(1.37656, 1.37656)
 max_value = 1.0
-step = 0.05
+step = 0.01
 
 [node name="AudioIcon" type="Sprite2D" parent="SettingsBtn/Control"]
 position = Vector2(-44.4946, -10.6498)

@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var health = 250
+var health = 200
 var damage = 10
 var speed = 200
 
@@ -8,6 +8,9 @@ var speed = 200
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var anim = $AnimatedSprite2D
 var dmg_timer
+
+@onready var health_bar = $Bar/Progress
+var max_health = health
 
 func TakeDamage( dmg ):
 	health = health - dmg
@@ -18,6 +21,7 @@ func TakeDamage( dmg ):
 	else:
 		anim.self_modulate = Color(0.2,1,0.2,1)
 	dmg_timer.start(0.2)
+	health_bar.scale.x = health/max_health
 
 func Die():
 	for i in get_tree().root.get_node("World").get_children():
@@ -57,7 +61,7 @@ func _process(_delta: float) -> void:
 			anim.play("attack")
 		_:
 			anim.play("idle")
-	if health < 150:
+	if health < 80:
 		speed = 400
 			
 func _on_timer_timeout() -> void:

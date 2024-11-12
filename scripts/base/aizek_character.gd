@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 class_name entity_aizek
 
-var health = 100
-var damage = 10
+signal takeDamage(dmg)
+
+var health = 100.0
+var damage = 10.0
 
 var anim
 var dmg_timer
@@ -17,6 +19,7 @@ func TakeDamage( dmg ):
 	else:
 		anim.self_modulate = Color(0.2,1,0.2,1)
 	dmg_timer.start(0.2)
+	emit_signal("takeDamage", dmg)
 
 func Die():
 	queue_free()

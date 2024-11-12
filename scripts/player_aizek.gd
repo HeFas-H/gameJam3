@@ -4,8 +4,11 @@ const SPEED = 300.0
 
 #@onready var console = $Console
 
+var max_health = health
 @onready var projectile = preload("res://nodes/aizek/bullet.tscn")
 @onready var anim_error = $AnimatedSprite2D2
+@onready var health_bar = $Bar/Progress
+
 
 var state = 0
 
@@ -17,12 +20,24 @@ enum status {
 var last_dir = Vector2(0,1)
 
 func _deploy() -> void:
-	health = 100
-	damage = 12
+	connect("takeDamage", Callable(self, "_damaged") )
+	$AnimatedSprite2D2/AudioStreamPlayer.volume_db = linear_to_db(global.volume_scale)
+	$AudioStreamPlayer.volume_db = linear_to_db(global.volume_scale)
+	health = 100.0
+	damage = 12.0
+	max_health = health
 	anim = $AnimatedSprite2D
 	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
 	anim_error.show()
 	anim_error.play("default")
+
+func _damaged(dmg) -> void:
+	if max_health >= health:
+		health_bar.scale.x = health/max_health
+	else:
+		health_bar.scale.x = 1
+	if dmg > 0:
+		$AudioStreamPlayer.play()
 
 func _physics_process(_delta: float) -> void:
 

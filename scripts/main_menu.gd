@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
+	global.gravity = Vector2(0, 980)
 	if !FileAccess.file_exists(global.PATH):
 		$ContinueBtn/Button.disabled = true
 		$ContinueBtn.self_modulate = Color(0.5,0.5,0.5,1)

@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://dg1wu2u8myhq8" path="res://nodes/aizek/error_spears.tscn" id="7_80o74"]
 [ext_resource type="Texture2D" uid="uid://bnn7a1xewgklu" path="res://assets/shadow.png" id="7_h6pgk"]
 [ext_resource type="PackedScene" uid="uid://skww207sc1yx" path="res://nodes/aizek/spawner.tscn" id="7_n57ly"]
+[ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="8_0kvlc"]
 [ext_resource type="Texture2D" uid="uid://d1hhtp3ykt3d3" path="res://assets/aizek.png" id="11_jt6au"]
 [ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="12_mvpxu"]
-[ext_resource type="AudioStream" uid="uid://lx3ldy6wjml7" path="res://assets/sound/aizek_ost.mp3" id="14_iy8ae"]
 [ext_resource type="Texture2D" uid="uid://yqh23ddm33kw" path="res://assets/errors/Line_error_1.png" id="15_hn1sg"]
 [ext_resource type="Texture2D" uid="uid://dbabfxkdgycnm" path="res://assets/errors/line_error_2.png" id="16_hgtp8"]
 [ext_resource type="AudioStream" uid="uid://b4baih3xyxnd8" path="res://assets/sound/Звук зависания программы для монтажа (тррр) (mp3cut.net).mp3" id="16_oqi64"]
@@ -177,7 +177,7 @@ position = Vector2(137, 27)
 [node name="Audio" type="Node2D" parent="."]
 
 [node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("14_iy8ae")
+stream = ExtResource("8_0kvlc")
 autoplay = true
 
 [node name="SounddddddddErrror" type="AudioStreamPlayer" parent="Audio"]

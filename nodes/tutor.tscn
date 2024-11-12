@@ -35,6 +35,7 @@ animations = [{
 }]
 
 [node name="Tutorial" type="Node2D"]
+visible = false
 top_level = true
 script = ExtResource("1_t5yal")
 metadata/tutorial = 0

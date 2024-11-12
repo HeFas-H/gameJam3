@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w0yfiaxobgwy"
+path="res://.godot/imported/лошадь ржёт аахахаах.mp3-d52a55d1768aabca323a2361d232ab76.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/лошадь ржёт аахахаах.mp3"
+dest_files=["res://.godot/imported/лошадь ржёт аахахаах.mp3-d52a55d1768aabca323a2361d232ab76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
