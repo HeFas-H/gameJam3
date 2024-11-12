@@ -34,6 +34,3 @@ func _timer_dmg_timeout() -> void:
 	
 func _deploy() -> void:
 	pass
-
-func _process(delta: float) -> void:
-	pass

@@ -8,9 +8,6 @@ func _ready() -> void:
 	if get_meta("repeat") <= 0:
 		timer.queue_free()
 
-func _process(delta: float) -> void:
-	pass
-
 var i = 0
 func _on_timer_timeout() -> void:
 	i += 1

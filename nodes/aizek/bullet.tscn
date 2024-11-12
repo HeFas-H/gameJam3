@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://11gco6hm1tt7"]
+[gd_scene load_steps=6 format=3 uid="uid://11gco6hm1tt7"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_pmprd"]
 [ext_resource type="Texture2D" uid="uid://gvdvdwq7ea6t" path="res://assets/ball.png" id="1_xek60"]
+[ext_resource type="AudioStream" uid="uid://cabsfqof0bxn3" path="res://assets/sound/the-sound-of-a-bubble-bursting-once-similar-to-chewing-gum.mp3" id="3_xfgl4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dygd7"]
 radius = 4.0
@@ -17,7 +18,7 @@ script = ExtResource("1_pmprd")
 
 [node name="Ball" type="Sprite2D" parent="."]
 position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(1.75, 1.75)
+scale = Vector2(1.08339, 1.08339)
 texture = ExtResource("1_xek60")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -30,4 +31,9 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_jaatm")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_xfgl4")
+pitch_scale = 1.5
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

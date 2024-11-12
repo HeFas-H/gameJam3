@@ -59,6 +59,7 @@ func _on_shoot_delay_timeout() -> void:
 
 func Attack():
 	if is_attacking:
+		$AudioStreamPlayer2D.play()
 		player.TakeDamage(damage)
 
 func _on_attack_area_body_entered(body: Node2D) -> void:

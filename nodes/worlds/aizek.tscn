@@ -155,6 +155,7 @@ metadata/pos = Vector2(15, 15)
 metadata/time = 2.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FinalCutscene_nodes"]
+top_level = true
 sprite_frames = SubResource("SpriteFrames_a5kbv")
 frame_progress = 0.987955
 
