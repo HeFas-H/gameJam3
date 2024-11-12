@@ -68,6 +68,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		state = 0
 	else:
 		state = 2
+		$Tok.play()
 		var lightbolt = flash.instantiate()
 		get_tree().root.get_node("World").add_child(lightbolt)
 		lightbolt.damage = damage
