@@ -18,6 +18,7 @@ var last_dir = Vector2(0,1)
 
 func _deploy() -> void:
 	health = 100000
+	damage = 1000
 	anim = $AnimatedSprite2D
 	anim_error.global_position = get_tree().root.get_node("World/Camera2D").global_position
 	anim_error.show()

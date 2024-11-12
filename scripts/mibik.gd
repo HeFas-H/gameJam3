@@ -20,7 +20,10 @@ func TakeDamage( dmg ):
 	dmg_timer.start(0.2)
 
 func Die():
-	queue_free()
+	for i in get_tree().root.get_node("World").get_children():
+		i.process_mode = Node.PROCESS_MODE_DISABLED
+	get_tree().root.get_node("World").CutScene()
+	
 
 func _ready() -> void:
 	dmg_timer = Timer.new()

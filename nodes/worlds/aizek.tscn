@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=25 format=4 uid="uid://lxn83kadkp4w"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_ammje"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_c5ox5"]
@@ -11,8 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://bnn7a1xewgklu" path="res://assets/shadow.png" id="7_h6pgk"]
 [ext_resource type="PackedScene" uid="uid://skww207sc1yx" path="res://nodes/aizek/spawner.tscn" id="7_n57ly"]
 [ext_resource type="AudioStream" uid="uid://c056d56yubuja" path="res://assets/sound/main_ost.mp3" id="8_0kvlc"]
+[ext_resource type="AudioStream" uid="uid://b1gjw60rtkkq7" path="res://assets/sound/windows-xp-shutdown.mp3" id="10_fi4uy"]
 [ext_resource type="Texture2D" uid="uid://d1hhtp3ykt3d3" path="res://assets/aizek.png" id="11_jt6au"]
 [ext_resource type="Texture2D" uid="uid://4yflgn3fyqva" path="res://assets/buttons.png" id="12_mvpxu"]
+[ext_resource type="Texture2D" uid="uid://yqh23ddm33kw" path="res://assets/errors/Line_error_1.png" id="15_hn1sg"]
+[ext_resource type="Texture2D" uid="uid://dbabfxkdgycnm" path="res://assets/errors/line_error_2.png" id="16_hgtp8"]
+[ext_resource type="AudioStream" uid="uid://cmr2j47n7r2bs" path="res://assets/sound/soundddddddd_Errror.wav" id="16_p1cfh"]
+[ext_resource type="Texture2D" uid="uid://bxawany7oskay" path="res://assets/errors/line_error_3.png" id="17_w21ci"]
+[ext_resource type="Texture2D" uid="uid://dqju1px4dgd4u" path="res://assets/errors/line_error_4.png" id="18_nokig"]
+[ext_resource type="PackedScene" uid="uid://c3gx0ksbmjgwt" path="res://nodes/error_app.tscn" id="19_x03fu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjilr"]
 texture = ExtResource("2_ha73f")
@@ -58,6 +65,29 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 129
 sources/3 = SubResource("TileSetAtlasSource_tjilr")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5kbv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_hn1sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hgtp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_w21ci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_nokig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hgtp8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
 [sub_resource type="LabelSettings" id="LabelSettings_7ylew"]
 font_size = 20
 
@@ -99,6 +129,21 @@ scale = Vector2(2.42701, 2.42701)
 tile_map_data = PackedByteArray("AAD7//3/AwABAAIAAAD7//7/AwABAAIAAAD7////AwABAAIAAAD7/wAAAwACAAEAAAD7/wEAAwACAAMAAAD7/wIAAwABAAIAAAD7/wMAAwABAAEAAAD8//3/AwACAAEAAAD8//7/AwACAAEAAAD8////AwABAAIAAAD8/wAAAwACAAIAAAD8/wEAAwABAAIAAAD8/wIAAwACAAMAAAD8/wMAAwABAAIAAAD9//3/AwACAAIAAAD9//7/AwABAAEAAAD9////AwACAAIAAAD9/wAAAwABAAEAAAD9/wEAAwACAAMAAAD9/wIAAwACAAMAAAD9/wMAAwACAAMAAAD+//3/AwABAAEAAAD+//7/AwABAAEAAAD+////AwABAAEAAAD+/wAAAwABAAMAAAD+/wEAAwABAAEAAAD+/wIAAwACAAMAAAD+/wMAAwACAAEAAAD///3/AwACAAMAAAD///7/AwABAAEAAAD/////AwACAAEAAAD//wAAAwACAAEAAAD//wEAAwACAAEAAAD//wIAAwACAAIAAAD//wMAAwABAAIAAAAAAP3/AwACAAEAAAAAAP7/AwACAAIAAAAAAP//AwABAAIAAAAAAAAAAwACAAMAAAAAAAEAAwACAAIAAAAAAAIAAwACAAIAAAAAAAMAAwACAAIAAAABAP3/AwABAAIAAAABAP7/AwACAAMAAAABAP//AwABAAEAAAABAAAAAwACAAEAAAABAAEAAwACAAMAAAABAAIAAwABAAIAAAABAAMAAwABAAMAAAACAP3/AwACAAMAAAACAP7/AwACAAMAAAACAP//AwABAAEAAAACAAAAAwABAAEAAAACAAEAAwACAAEAAAACAAIAAwACAAMAAAACAAMAAwABAAEAAAADAP3/AwABAAIAAAADAP7/AwABAAMAAAADAP//AwACAAEAAAADAAAAAwABAAEAAAADAAEAAwACAAIAAAADAAIAAwACAAEAAAADAAMAAwABAAEAAAAEAP3/AwACAAEAAAAEAP7/AwACAAIAAAAEAP//AwACAAMAAAAEAAAAAwABAAIAAAAEAAEAAwACAAMAAAAEAAIAAwABAAEAAAAEAAMAAwACAAEAAAAFAP3/AwACAAMAAAAFAP7/AwACAAEAAAAFAP//AwACAAMAAAAFAAAAAwABAAEAAAAFAAEAAwABAAEAAAAFAAIAAwACAAIAAAAFAAMAAwABAAEAAAD7//z/AwABAAAAAAD8//z/AwABAAAAAAD9//z/AwABAAAAAAD+//z/AwABAAAAAAD///z/AwABAAAAAAAAAPz/AwABAAAAAAABAPz/AwABAAAAAAACAPz/AwABAAAAAAADAPz/AwABAAAAAAAEAPz/AwABAAAAAAAFAPz/AwABAAAAAAAGAP3/AwADAAEAAAAGAP7/AwADAAEAAAAGAP//AwADAAEAAAAGAAAAAwADAAEAAAAGAAEAAwADAAIAAAAGAAIAAwADAAEAAAAGAAMAAwADAAEAAAD7/wQAAwACAAQAAAD8/wQAAwACAAQAAAD9/wQAAwACAAQAAAD+/wQAAwACAAQAAAD//wQAAwACAAQAAAAAAAQAAwACAAQAAAABAAQAAwACAAQAAAACAAQAAwACAAQAAAADAAQAAwACAAQAAAAEAAQAAwACAAQAAAAFAAQAAwACAAQAAAD6//3/AwAAAAMAAAD6//7/AwAAAAMAAAD6////AwAAAAMAAAD6/wAAAwAAAAMAAAD6/wEAAwAAAAIAAAD6/wIAAwAAAAMAAAD6/wMAAwAAAAMAAAD6//z/AwAAAAAAAAAGAPz/AwADAAAAAAAGAAQAAwADAAQAAAD6/wQAAwAAAAQAAAA=")
 tile_set = SubResource("TileSet_y5mxi")
 
+[node name="FinalCutscene_nodes" type="Node2D" parent="."]
+process_mode = 4
+visible = false
+
+[node name="Error_app" parent="FinalCutscene_nodes" instance=ExtResource("19_x03fu")]
+top_level = true
+position = Vector2(117, 33)
+metadata/repeat = 1
+metadata/pos = Vector2(15, 15)
+metadata/time = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="FinalCutscene_nodes"]
+sprite_frames = SubResource("SpriteFrames_a5kbv")
+frame_progress = 0.987955
+
 [node name="Shadow" type="Sprite2D" parent="."]
 visible = false
 self_modulate = Color(1, 1, 1, 0.756863)
@@ -113,6 +158,14 @@ position = Vector2(137, 27)
 
 [node name="MainOst" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("8_0kvlc")
+autoplay = true
+
+[node name="Windows-xp-shutdown" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("10_fi4uy")
+
+[node name="SounddddddddErrror" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 4
+stream = ExtResource("16_p1cfh")
 autoplay = true
 
 [node name="Objects" type="Node2D" parent="."]
@@ -179,13 +232,17 @@ layout_mode = 2
 texture = ExtResource("12_mvpxu")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 30.0
 one_shot = true
 autostart = true
 
 [node name="Cutscene" type="Timer" parent="."]
 wait_time = 0.08
 
+[node name="Cutscene2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Cutscene" to="." method="_on_cutscene_timeout"]
+[connection signal="timeout" from="Cutscene2" to="." method="_on_cutscene_2_timeout"]
