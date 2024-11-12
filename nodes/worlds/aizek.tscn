@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://lxn83kadkp4w"]
+[gd_scene load_steps=25 format=4 uid="uid://lxn83kadkp4w"]
 
 [ext_resource type="Texture2D" uid="uid://bp5qdpdtufykw" path="res://assets/background.png" id="1_ammje"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_c5ox5"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bxawany7oskay" path="res://assets/errors/line_error_3.png" id="17_w21ci"]
 [ext_resource type="Texture2D" uid="uid://dqju1px4dgd4u" path="res://assets/errors/line_error_4.png" id="18_nokig"]
 [ext_resource type="PackedScene" uid="uid://c3gx0ksbmjgwt" path="res://nodes/error_app.tscn" id="19_x03fu"]
+[ext_resource type="PackedScene" uid="uid://cjimwij7xmtb7" path="res://nodes/tutor.tscn" id="20_u7mif"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tjilr"]
 texture = ExtResource("2_ha73f")
@@ -243,6 +244,9 @@ wait_time = 0.08
 [node name="Cutscene2" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="Tutorial" parent="." instance=ExtResource("20_u7mif")]
+metadata/tutorial = 5
 
 [connection signal="tree_exited" from="." to="." method="_on_tree_exited"]
 [connection signal="timeout" from="FinalCutscene_nodes/Timer" to="." method="_on_final_timer_timeout"]

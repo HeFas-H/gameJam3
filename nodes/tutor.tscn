@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cjimwij7xmtb7"]
+[gd_scene load_steps=9 format=3 uid="uid://cjimwij7xmtb7"]
 
 [ext_resource type="Script" path="res://scripts/Tutorial.gd" id="1_t5yal"]
 [ext_resource type="Texture2D" uid="uid://omcxrq43x5ix" path="res://assets/tutorial/t0.png" id="2_jpuve"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d3sncqsvl3t3k" path="res://assets/tutorial/t2.png" id="4_78maw"]
 [ext_resource type="Texture2D" uid="uid://co70j8mua6w4u" path="res://assets/tutorial/t3.png" id="5_umulv"]
 [ext_resource type="Texture2D" uid="uid://dt72ct1ck6qbg" path="res://assets/tutorial/t4.png" id="6_106p0"]
+[ext_resource type="Texture2D" uid="uid://c5e3weqgsxbbm" path="res://assets/tutorial/t5.png" id="7_vhqf6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0djtt"]
 animations = [{
@@ -24,6 +25,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("6_106p0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vhqf6")
 }],
 "loop": false,
 "name": &"default",

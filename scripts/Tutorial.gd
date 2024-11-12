@@ -1,7 +1,5 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.frame = get_meta("tutorial")
 	if get_meta("tutorial") < global.tutorial:
@@ -9,5 +7,5 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("lmb"):
-		global.tutorial += 1
+		global.tutorial += 1 #get_meta("tutorial)+1
 		queue_free()
