@@ -17,11 +17,11 @@ func _ready() -> void:
 
 #constant_linear_velocity 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if self.position != pos:
 		position = Vector2(move_toward(self.position.x, self.pos.x, deltatime), move_toward(self.position.y, self.pos.y, deltatime))
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if self.position != pos:
 		return
 	if get_meta("can_disappear"):

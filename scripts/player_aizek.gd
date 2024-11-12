@@ -24,7 +24,7 @@ func _deploy() -> void:
 	anim_error.show()
 	anim_error.play("default")
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 	match state:
 		0:

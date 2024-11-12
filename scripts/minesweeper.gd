@@ -30,7 +30,7 @@ func _ready() -> void:
 			mines_matrix[x][y] = _c
 	place_bomb()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	l_timer.text = str(Time.get_time_string_from_unix_time(Time.get_ticks_msec()/1000 - start_time))
 
 func check_bomb( num ):
@@ -72,16 +72,12 @@ func _check( id ):
 			pos = Vector2(x,y)
 			if (id+pos).x >= 0 and (id+pos).y >= 0 and (id+pos).x < map_size.x and (id+pos).y < map_size.y:
 				if mines_matrix[id.x+x][id.y+y].sprite.frame == mines_matrix[id.x+x][id.y+y].type:
-					continue
+					continue # где-то есть ошибка, но где?
 				if mines_matrix[id.x+x][id.y+y].type == 0:
-					if mines_matrix[id.x+x][id.y+y].sprite.frame == mines_matrix[id.x+x][id.y+y].type:
-						continue
 					mines_matrix[id.x+x][id.y+y].sprite.frame = mines_matrix[id.x+x][id.y+y].type
 					opened = opened + 1
 					_check(Vector2(id.x+x, id.y+y))
 				elif mines_matrix[id.x][id.y].type == 0:
-					if mines_matrix[id.x+x][id.y+y].sprite.frame == mines_matrix[id.x+x][id.y+y].type:
-						continue
 					opened = opened + 1
 					mines_matrix[id.x+x][id.y+y].sprite.frame = mines_matrix[id.x+x][id.y+y].type
 	if opened + mines == map_size.x*map_size.y:

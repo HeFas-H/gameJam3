@@ -12,7 +12,7 @@ var console_obj = []
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("lmb"):
 		if focus == false:
 			line.focus_mode = 0
@@ -106,7 +106,7 @@ func console_gravity( value ): #set gravity
 func _text_edit( txt ):
 	text.text = txt + "\n" + text.text 
 
-func _entered(new_text: String) -> void:
+func _entered(_new_text: String) -> void:
 	command = line.text
 	line.text = ""
 	_parse()

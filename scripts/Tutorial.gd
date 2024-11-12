@@ -5,7 +5,7 @@ func _ready() -> void:
 	if get_meta("tutorial") < global.tutorial:
 		queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("lmb"):
 		global.tutorial += 1 #get_meta("tutorial)+1
 		queue_free()

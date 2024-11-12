@@ -29,11 +29,11 @@ func _ready() -> void:
 		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
-func _input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if !get_parent().is_playable:
 		return
 	if event.is_action_released("lmb"):

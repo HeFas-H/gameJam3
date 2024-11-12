@@ -4,10 +4,10 @@ var dir = Vector2(0,3)
 
 @onready var trigger = $Damage
 @onready var player = get_tree().get_nodes_in_group("player")[0]
-@onready var sign = preload("res://nodes/tetris/sing.tscn")
+@onready var signa = preload("res://nodes/tetris/sing.tscn")
 
 func _ready() -> void:
-	var s = sign.instantiate()
+	var s = signa.instantiate()
 	get_tree().root.add_child(s)
 	s.global_position = global_position
 	for i in trigger.get_children():
