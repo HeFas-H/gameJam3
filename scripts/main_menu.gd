@@ -3,6 +3,7 @@ extends Node2D
 func _ready() -> void:
 	if !FileAccess.file_exists(global.PATH):
 		$ContinueBtn/Button.disabled = true
+		$ContinueBtn.self_modulate = Color(0.5,0.5,0.5,1)
 	else:
 		$ContinueBtn/Button.disabled = false
 		global.Load()
@@ -22,7 +23,8 @@ func _on_button_exit_pressed() -> void:
 
 
 func _on_continue_m_entered() -> void:
-	$ContinueBtn.self_modulate = Color(1,1,1,0.7)
+	if FileAccess.file_exists(global.PATH):
+		$ContinueBtn.self_modulate = Color(1,1,1,0.7)
 
 
 func _on_newgame_m_entered() -> void:
@@ -35,7 +37,8 @@ func _on_quite_m_entered() -> void:
 
 
 func _on_continue_m_exited() -> void:
-	$ContinueBtn.self_modulate = Color(1,1,1,1)
+	if FileAccess.file_exists(global.PATH):
+		$ContinueBtn.self_modulate = Color(1,1,1,1)
 
 func _on_newgame_m_exited() -> void:
 	$NewGameBtn.self_modulate = Color(1,1,1,1)
