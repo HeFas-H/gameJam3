@@ -46,13 +46,13 @@ enum status {
 	attack = 1,
 }
 
-var deltatime = 16
+var deltatime = 800
 var pos = Vector2(0,0)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+
+func _process(delta: float) -> void:
 
 	if self.global_position != pos:
-		global_position = Vector2(move_toward(self.global_position.x, self.pos.x, deltatime), move_toward(self.global_position.y, self.pos.y, deltatime))
+		position = Vector2(move_toward(self.position.x, self.pos.x, deltatime*delta), move_toward(self.position.y, self.pos.y, deltatime*delta))
 
 	match state:
 		0:

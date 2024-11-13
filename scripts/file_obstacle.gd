@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var anim = $AnimatedSprite2D
 var pos = Vector2(0,0)
-var deltatime = 8
+var deltatime = 300
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Ghost.global_rotation = 0
@@ -17,9 +17,9 @@ func _ready() -> void:
 
 #constant_linear_velocity 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if self.position != pos:
-		position = Vector2(move_toward(self.position.x, self.pos.x, deltatime), move_toward(self.position.y, self.pos.y, deltatime))
+		position = Vector2(move_toward(self.position.x, self.pos.x, deltatime*delta), move_toward(self.position.y, self.pos.y, deltatime*delta))
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if self.position != pos:
